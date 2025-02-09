@@ -1,0 +1,244 @@
+{% extends "master-page.html" %}
+{% load static %}
+
+{% block nav-bar %}
+{% include 'includes/nav-bar.html' %}
+{% endblock %}
+
+{% block left-menu %}
+{% include 'includes/left-menu.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4" style="color: #ff6b6b;">
+        <span class="text-muted fw-light">Quản lý /</span> Tích điểm
+    </h4>
+<div class="row justify-content-center">
+    <div class="col-md-10">
+         <div class="card custom-card-bg">
+            <div class="card-body">
+                <h5 class="card-title text-danger custom-title">Tổng số điểm hiện tại: {{ tong_diem }}</h5>
+            </div>
+        </div>
+         <br>
+        <!-- Bảng hiển thị điểm của khách hàng -->
+        <div class="card custom-card-bg">
+            <div class="card-body">
+                <h5 class="card-title text-danger custom-title">Danh sách khách hàng và điểm tích lũy</h5>
+                <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                                                    <!-- Toastr CSS -->
+                            <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+
+                            <!-- Toastr JS -->
+                            <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+                        <tr>
+                            <th scope="col">Mã khách hàng</th>
+                            <th scope="col">Tên khách hàng</th>
+                            <th scope="col">Số điểm hiện tại</th>
+                             <th scope="col">Tổng số điểm đã tích lũy</th>
+                            <th scope="col">Thêm điểm</th>
+                             <th scope="col">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for khachhang in khach_hangs %}
+                        <tr>
+                            <td>{{ khachhang.ma_khach_hang }}</td>
+                            <td>{{ khachhang.ho_ten }}</td>
+                            <td id="total-diem-{{khachhang.ma_khach_hang}}">{{ khachhang.total_diem }}</td>
+                            <td><span>{{ khachhang.tong_diem_da_tich_luy }}</span></td>
+                            <td>
+                                <form method="post" action="{% url 'tichdiem' %}" class="add-points-form">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="ma_khach_hang" value="{{ khachhang.ma_khach_hang }}">
+                                    <button type="submit" class="btn btn-outline-danger add-points-button" data-customer-id="{{khachhang.ma_khach_hang}}" name="add_points" value="true">
+                                        <i class="bx bx-plus-circle me-1"></i> Thêm điểm
+                                    </button>
+                                </form>
+                            </td>
+                             <td>
+                                {% if khachhang.total_diem >= 100 %}
+                                    <p class="text-success">Bạn đã đủ điểm nhận thưởng!</p>
+                                    <form method="post" action="{% url 'tichdiem' %}" class="choose-product-form">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="ma_khach_hang_choose" value="{{ khachhang.ma_khach_hang }}">
+                                        <select class="form-select" name="ma_san_pham_choose" required>
+                                            {% for sanpham in sanphams %}
+                                                <option value="{{ sanpham.ma_san_pham }}">{{ sanpham.ten_san_pham }}</option>
+                                            {% endfor %}
+                                        </select>
+                                        <button type="submit" class="btn btn-outline-warning choose-product-button" name="choose_product" data-customer-id="{{khachhang.ma_khach_hang}}" value="true">
+                                            Nhận sản phẩm
+                                        </button>
+                                    </form>
+                                {% else %}
+                                    <p class="text-danger">Bạn chưa đủ điểm nhận thưởng.</p>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+              </div>
+            </div>
+        </div>
+    </div>
+     <div id="message-container" class="mt-3"></div>
+ Use code with caution.
+</div>
+{% endblock %}
+{% block footer %}
+{% include 'includes/footer.html' %}
+{% endblock %}
+
+<style>
+    .custom-card-bg {
+        background-color: #f8f9fa;
+        border-radius: 15px; /* Tăng bo tròn */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Tăng shadow */
+        border: 1px solid #ddd; /* Thêm border nhẹ */
+         margin-bottom: 20px;
+    }
+
+    .custom-title {
+        color: #e74c3c !important; /* Màu đỏ chính */
+        font-size: 2.2rem; /* Tăng kích thước chữ */
+        font-weight: 600; /* Chữ đậm hơn */
+        margin-bottom: 1.2rem;
+        text-transform: uppercase;
+    }
+
+    .table {
+      margin-top: 1rem;
+    }
+
+    .table th, .table td {
+        text-align: center;
+        padding: 1rem; /* Tăng padding cho cell */
+    }
+
+    .table thead th {
+        background-color: #f0f0f0;
+         font-weight: bold; /* In đậm chữ thead */
+    }
+
+    .modal-body input {
+        width: 100%;
+        padding: 0.8rem;
+    }
+
+    .btn-outline-danger {
+        color: #e74c3c;
+        border-color: #e74c3c;
+         transition: all 0.3s ease; /* Thêm hiệu ứng chuyển động */
+    }
+    .btn-outline-danger:hover {
+        background-color: #e74c3c;
+        color: #fff;
+           transform: translateY(-2px); /* Hiệu ứng hover nổi lên */
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a shadow */
+    }
+    .btn-outline-warning {
+        color: #ffc107;
+        border-color: #ffc107;
+          transition: all 0.3s ease;
+    }
+     .btn-outline-warning:hover {
+        background-color: #ffc107;
+        color: #fff;
+           transform: translateY(-2px); /* Hiệu ứng hover nổi lên */
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a shadow */
+    }
+    .text-success {
+        color: #28a745 !important; /* Màu xanh lá */
+       font-weight: bold; /* In đậm chữ */
+        margin-top: 1rem;
+    }
+   .table-responsive {
+      overflow-x: auto;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Hàm hiển thị thông báo
+        function showMessage(message, type = 'success') {
+            const messageContainer = $('#message-container');
+             messageContainer.html(`<div class="alert alert-${type} alert-dismissible fade show" role="alert">
+                ${message}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>`);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Xử lý khi nút "Thêm điểm" được nhấn
+          $('.add-points-form').on('submit', function(e) {
+            e.preventDefault();
+            const form = $(this);
+            const customerId = form.find('.add-points-button').data('customer-id');
+
+              $.ajax({
+                  type: 'POST',
+                  url: form.attr('action'),
+                  data: form.serialize(),
+                  dataType: 'json',
+                  success: function(response) {
+                    if(response.success) {
+                        showMessage(response.message);
+                         $.ajax({
+                                 type: 'GET',
+                                 url:  '/api/get-total-diem/' + customerId + '/', // Thay thế bằng URL API thực tế của bạn
+                                 dataType: 'json',
+                                  success: function(data) {
+                                      $('#total-diem-' + customerId).text(data.total_diem);
+                                  },
+                            });
+
+                    } else {
+                        showMessage(response.message, 'danger');
+                    }
+                },
+                  error: function(xhr, status, error) {
+                        showMessage('Có lỗi xảy ra khi gửi yêu cầu', 'danger');
+                  }
+              });
+
+        });
+
+        // Xử lý khi nút "Chọn sản phẩm" được nhấn
+         $('.choose-product-form').on('submit', function(e) {
+            e.preventDefault();
+            const form = $(this);
+              const customerId = form.find('.choose-product-button').data('customer-id');
+            $.ajax({
+                type: 'POST',
+                 url: form.attr('action'),
+                 data: form.serialize(),
+                 dataType: 'json',
+                 success: function(response) {
+                     if (response.success) {
+                           showMessage(response.message);
+                          $.ajax({
+                                 type: 'GET',
+                                 url: '/api/get-total-diem/' + customerId + '/', // Thay thế bằng URL API thực tế của bạn
+                                 dataType: 'json',
+                                  success: function(data) {
+                                      $('#total-diem-' + customerId).text(data.total_diem);
+                                  },
+                            });
+                     } else {
+                         showMessage(response.message, 'danger');
+                     }
+                 },
+                 error: function(xhr, status, error) {
+                      showMessage('Có lỗi xảy ra khi gửi yêu cầu', 'danger');
+                 }
+            });
+        });
+    });
+</script>

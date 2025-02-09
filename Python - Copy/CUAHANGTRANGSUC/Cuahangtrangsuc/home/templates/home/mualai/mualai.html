@@ -1,0 +1,83 @@
+{% extends "master-page.html" %}
+{% load static %}
+
+{% block nav-bar %}
+    {%include 'includes/nav-bar.html'%}
+{% endblock %} 
+
+{% block left-menu %}
+    {% include 'includes/left-menu.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4" style="color: #28a745;">
+       <span class="text-muted fw-light">Quản lý /</span> Mua lại
+    </h4>
+
+    <!-- Buyback Form -->
+     <div class="card mb-4" style="border: 1px solid #28a745;">
+        <div class="card-body">
+           <h5 class="card-title text-success text-center mb-3">Giao dịch mua lại</h5>
+          <form method="post" id="buybackForm">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="maHoaDon" class="form-label">Mã hóa đơn bán</label>
+                    <div class="input-group">
+                         <input type="text" class="form-control" id="maHoaDon" name="ma_hoa_don" required>
+                         <button type="button" class="btn btn-outline-secondary" onclick="findHoaDon()">Tìm</button>
+                     </div>
+                </div>
+                <div class="mb-3">
+                    <label for="maSanPham" class="form-label">Mã sản phẩm</label>
+                    <input type="text" class="form-control" id="maSanPham" name="ma_san_pham" required>
+                </div>
+                <div class="mb-3">
+                    <label for="giaMuaLai" class="form-label">Giá mua lại</label>
+                    <input type="number" class="form-control" id="giaMuaLai" name="gia_mua_lai" required>
+                    <small class="text-muted">Giá mua lại sẽ được tính toán dựa trên giá vàng và ưu đãi.</small>
+                </div>
+                <div class="mb-3">
+                     <label for="ghiChu" class="form-label">Ghi chú</label>
+                    <textarea class="form-control" id="ghiChu" name="ghi_chu" rows="2"></textarea>
+                </div>
+              <div class="mb-3">
+                   <label for="giaVang" class="form-label">Giá vàng hiện tại (24k)</label>
+                   <input type="number" class="form-control" id="giaVang" value="{{ current_gia_vang.gia_vang_24k }}"  disabled >
+              </div>
+
+               <div class="text-center">
+                    <button type="submit" class="btn btn-success" name="create_buyback" value="true">Thêm giao dịch</button>
+                  <button type="button" class="btn btn-outline-primary" onclick="printBuybackInvoice()">In hóa đơn</button>
+                </div>
+           </form>
+        </div>
+     </div>
+  
+
+    <!-- Buyback Statistics -->
+    <div class="card mb-4" style="border: 1px solid #28a745;">
+        <div class="card-body">
+            <h5 class="card-title text-success text-center">Thống kê giao dịch mua lại</h5>
+            <p class="card-text">Tổng số giao dịch mua lại tháng này: <span class="fw-bold">{{ tong_giao_dich_mua_lai_thang_nay }}</span></p>
+            <p class="card-text">Tổng tiền mua lại tháng này: <span class="fw-bold">{{ tong_tien_mua_lai_thang_nay }}</span></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+    {%include 'includes/footer.html'%}
+{% endblock %}
+
+<script>
+    function findHoaDon() {
+       // Implement the logic to find the sales invoice using `maHoaDon`
+      alert('This feature is not implemented')
+    }
+
+     function printBuybackInvoice() {
+         // Implement logic to generate the buyback invoice and handle print
+         alert('This feature is not implemented')
+    }
+</script>

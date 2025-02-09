@@ -1,0 +1,275 @@
+{% extends "master-page.html" %}
+{% load static %}
+
+{% block nav-bar %}
+    {%include 'includes/nav-bar.html'%}
+{% endblock %} 
+
+{% block left-menu %}
+    {% include 'includes/left-menu.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4" style="color: #ffc107;">
+        <span class="text-muted fw-light">Quản lý /</span> Khuyến mãi
+    </h4>
+
+    <!-- Company Promotions -->
+     <div class="card mb-4" style="border: 1px solid #ffc107;">
+        <div class="card-body">
+             <h5 class="card-title text-warning text-center">Chương trình khuyến mãi của công ty</h5>
+            <div class="row">
+                {% for khuyenmai in khuyen_mai %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 promotion-card" style="border: 1px solid #ffc107;">
+                       
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-warning">{{ khuyenmai.ma_khuyen_mai }}</h5>
+                            <p class="card-text">Sản phẩm: {{ khuyenmai.ma_san_pham.ten_san_pham }}</p>
+                            <p class="card-text">Chiết khấu: {{ khuyenmai.phan_tram_chiet_khau }}%</p>
+                            <p class="card-text">Từ ngày: {{ khuyenmai.ngay_bat_dau }}</p>
+                            <p class="card-text">Đến ngày: {{ khuyenmai.ngay_ket_thuc }}</p>
+                            <a href="#" class="btn btn-outline-warning">Xem chi tiết</a>
+                        </div>
+                    </div>
+                 </div>
+                {% empty %}
+                   <div class="col-12 text-center">
+                       <p>Không có chương trình khuyến mãi nào.</p>
+                   </div>
+                {% endfor %}
+            </div>
+            <div class="d-flex justify-content-end mt-3 me-3">
+                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#addCompanyPromotionModal">
+                    <i class="bx bx-plus-circle me-1"></i> Thêm khuyến mãi công ty
+                </button>
+            </div>
+        </div>
+     </div>
+     
+    <!-- Customer-Specific Discounts -->
+   <div class="card mb-4" style="border: 1px solid #6c757d;">
+         <div class="card-body">
+             <h5 class="card-title text-secondary text-center">Ưu đãi dành riêng cho khách hàng</h5>
+            <div class="table-responsive text-nowrap">
+                 <table class="table">
+                      <thead>
+                        <tr>
+                            <th class="text-center">Mã khách hàng</th>
+                            <th class="text-center">Chiết khấu</th>
+                            <th class="text-center">Trạng thái</th>
+                            <th class="text-center">Thao tác</th>
+                        </tr>
+                      </thead>
+                      <tbody class="table-border-bottom-0">
+                         {% for uudai in uudais %}
+                             <tr>
+                               <td class="text-center">{{ uudai.ma_khach_hang }}</td>
+                               <td class="text-center">{{ uudai.phan_tram_chiet_khau }}%</td>
+                                <td class="text-center">
+                                  {% if uudai.duoc_duyet %}
+                                      <span class="badge bg-label-success me-1">Đã duyệt</span>
+                                  {% else %}
+                                      <span class="badge bg-label-warning me-1">Chờ duyệt</span>
+                                 {% endif %}
+                                 </td>
+                                 <td class="text-center">
+                                     <div class="dropdown">
+                                       <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                           <i class="bx bx-dots-vertical-rounded"></i>
+                                       </button>
+                                        <div class="dropdown-menu">
+                                            {% if not uudai.duoc_duyet %}
+                                                <a class="dropdown-item duyet-btn" href="#" data-id="{{ uudai.id }}">
+                                                     <i class="bx bx-check-circle me-1"></i> Duyệt
+                                                </a>
+                                            {% endif %}
+                                            <a class="dropdown-item delete-btn" href="#" data-id="{{ uudai.id }}"><i class="bx bx-trash me-1"></i> Xóa</a>
+                                        </div>
+                                    </div>
+                                  </td>
+                           </tr>
+                         {% empty %}
+                         <tr>
+                            <td colspan="4" class="text-center">Không có ưu đãi dành riêng cho khách hàng.</td>
+                        </tr>
+                       {% endfor %}
+                   </tbody>
+                </table>
+             </div>
+             <div class="d-flex justify-content-end mt-3 me-3">
+                 <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#addCustomerDiscountModal">
+                    <i class="bx bx-plus-circle me-1"></i> Thêm ưu đãi cho khách hàng
+                 </button>
+           </div>
+         </div>
+   </div>
+      <div class="modal fade" id="addCompanyPromotionModal" tabindex="-1" aria-labelledby="addCompanyPromotionModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+             <div class="modal-header">
+                  <h5 class="modal-title" id="addCompanyPromotionModalLabel">Thêm khuyến mãi công ty mới</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+          <div class="modal-body">
+                <form method="post" id="addCompanyPromotionForm">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                         <label for="maKhuyenMai" class="form-label">Mã khuyến mãi</label>
+                         <input type="text" class="form-control" id="maKhuyenMai" name="ma_khuyen_mai" required>
+                    </div>
+                     <div class="mb-3">
+                        <label for="maSanPham" class="form-label">Mã sản phẩm</label>
+                        <select class="form-select" id="maSanPham" name="ma_san_pham" required>
+                          {% for sanpham in sanphams %}
+                              <option value="{{ sanpham.ma_san_pham}}">{{ sanpham.ten_san_pham}}</option>
+                          {% endfor %}
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                       <label for="phanTramKhuyenMai" class="form-label">Chiết khấu (%)</label>
+                       <input type="number" class="form-control" id="phanTramKhuyenMai" name="phan_tram_chiet_khau" required>
+                    </div>
+                    <div class="mb-3">
+                       <label for="ngayBatDau" class="form-label">Ngày bắt đầu</label>
+                        <input type="datetime-local" class="form-control" id="ngayBatDau" name="ngay_bat_dau" required>
+                   </div>
+                    <div class="mb-3">
+                        <label for="ngayKetThuc" class="form-label">Ngày kết thúc</label>
+                        <input type="datetime-local" class="form-control" id="ngayKetThuc" name="ngay_ket_thuc" required>
+                    </div>
+                     <input type="hidden" name="add_company_promotion" value="true"> <!-- Hidden input to indentify form -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="submit" form="addCompanyPromotionForm" class="btn btn-primary">Lưu</button>
+           </div>
+        </div>
+      </div>
+    </div>
+      <div class="modal fade" id="addCustomerDiscountModal" tabindex="-1" aria-labelledby="addCustomerDiscountModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+           <div class="modal-content">
+                 <div class="modal-header">
+                     <h5 class="modal-title" id="addCustomerDiscountModalLabel">Thêm ưu đãi cho khách hàng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                 </div>
+            <div class="modal-body">
+                 <form method="post" id="addCustomerDiscountForm">
+                     {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="maKhachHang" class="form-label">Mã khách hàng</label>
+                        <input type="text" class="form-control" id="maKhachHang" name="ma_khach_hang" required>
+                    </div>
+                     <div class="mb-3">
+                       <label for="phanTramKhuyenMai" class="form-label">Chiết khấu (%)</label>
+                        <input type="number" class="form-control" id="phanTramKhuyenMai" name="phan_tram_chiet_khau" required>
+                   </div>
+                     <input type="hidden" name="add_customer_discount" value="true"> <!-- Hidden input to indentify form -->
+                 </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="submit" form="addCustomerDiscountForm" class="btn btn-primary">Lưu</button>
+            </div>
+           </div>
+        </div>
+      </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $(".duyet-btn").click(function(e) {
+        e.preventDefault();
+        let uudai_id = $(this).data("id");
+        let button = $(this);
+
+        $.ajax({
+            url: `/khuyenmai/duyet_uudai/${uudai_id}/`,
+            type: "POST",
+            data: {
+                csrfmiddlewaretoken: "{{ csrf_token }}"
+            },
+            success: function(response) {
+                if (response.success) {
+                    button.closest("tr").find(".badge").text("Đã duyệt").removeClass("bg-label-warning").addClass("bg-label-success");
+                    button.remove();  // Ẩn nút sau khi duyệt
+                    alert(response.message);
+                } else {
+                    alert("Lỗi: " + response.message);
+                }
+            },
+            error: function() {
+                alert("Có lỗi xảy ra, vui lòng thử lại!");
+            }
+        });
+    });
+    $(".delete-btn").click(function(e) {
+        e.preventDefault();
+        let uudai_id = $(this).data("id");
+        let row = $(this).closest("tr"); // Tìm dòng gần nhất
+        let button = $(this);
+
+        $.ajax({
+            url: `/khuyenmai/delete_uudai/${uudai_id}/`, // URL xóa ưu đãi
+            type: "POST",
+            data: {
+                csrfmiddlewaretoken: "{{ csrf_token }}" // CSRF token
+            },
+            success: function(response) {
+                if (response.success) {
+                    row.remove(); // Xóa dòng khỏi bảng
+                    alert(response.message);
+                } else {
+                   alert("Lỗi xóa ưu đãi: " + response.message);
+                }
+            },
+            error: function() {
+                alert("Có lỗi xảy ra, vui lòng thử lại!");
+            }
+        });
+    });
+});
+</script>
+
+
+
+
+{% endblock %}
+
+{% block footer %}
+    {%include 'includes/footer.html'%}
+{% endblock %}
+
+<style>
+    .promotion-card {
+        transition: transform 0.3s ease;
+    }
+    .promotion-card:hover {
+        transform: translateY(-5px); /* Slightly lift the card */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Add a shadow */
+    }
+
+    .promotion-image-container {
+        overflow: hidden; /* Hide overflow for zoom effect */
+        height: 200px; /* Set a fixed height for image containers */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     
+    }
+     .promotion-image{
+       width: 100%;
+      height: auto;
+      object-fit: cover; /* Ensure images cover the container without stretching */
+      transition: transform 0.3s ease;
+    }
+    .promotion-card:hover .promotion-image{
+       transform: scale(1.1);
+    }
+
+</style>

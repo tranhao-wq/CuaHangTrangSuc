@@ -1,0 +1,30 @@
+/* styles.css */
+.card-header {
+    background-color: #ffc107; /* Màu vàng cho tiêu đề */
+    color: #000; /* Màu chữ đen */
+    font-weight: bold;
+  }
+  
+  .table {
+    margin: 20px 0; /* Khoảng cách cho bảng */
+  }
+  
+  .card-title {
+    font-size: 30px;
+    color: #007bff;
+  }
+  
+  img {
+    border-radius: 8px; /* Bo góc ảnh */
+  }
+
+  .custom-card-bg {
+    background-color: #e3f2fd; /* Màu xanh dương nhạt */
+    border-radius: 8px; /* Bo góc mềm mại */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng nhẹ */
+  }
+  
+  .custom-card-bg .card-body {
+    padding: 20px; /* Đảm bảo khoảng cách nội dung không bị đè */
+  }
+  

@@ -1,0 +1,142 @@
+{% load static %}
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+    <div class="app-brand demo">
+      <a href="{% url 'quaybanhangs' %}" class="app-brand-link">
+        <img src="{% static 'home/assets/img/jewelrylogo.png' %}" alt="Jewelry Logo" height="40" class="app-brand-logo demo" />
+        <span class="app-brand-text demo menu-text fw-bold ms-2">Jewelry</span>
+      </a>
+
+      <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+        <i class="bx bx-chevron-left bx-sm d-flex align-items-center justify-content-center"></i>
+      </a>
+    </div>
+
+    <div class="menu-inner-shadow"></div>
+
+    <ul class="menu-inner py-1">
+      <!-- Dashboards -->
+       <li class="menu-item {% if active_menu == 'quaybanhangs' %}active{% endif %}">
+           <a href="{% url 'quaybanhangs' %}" class="menu-link">
+             <i class="menu-icon tf-icons bx bx-store"></i>
+              <div class="text-truncate" data-i18n="Quản lý quầy">Quản lý quầy</div>
+            </a>
+          </li>
+          <li class="menu-item {% if active_menu == 'sanpham' %}active{% endif %}">
+            <a href="{% url 'sanpham' %}" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-package"></i>  <!-- Biểu tượng gói sản phẩm -->
+              <div class="text-truncate" data-i18n="Quản lý quầy">Sản phẩm</div>
+            </a>
+        </li>
+        
+           <li class="menu-item {% if active_menu == 'khuyenmai' %}active{% endif %}">
+            <a href="{% url 'khuyenmai' %}"
+               class="menu-link">
+              <i class="menu-icon tf-icons bx bx-gift"></i>
+              <div class="text-truncate" data-i18n="Khuyến mãi">Khuyến mãi</div>
+            </a>
+          </li>
+         <li class="menu-item {% if active_menu == 'mualai' %}active{% endif %}">
+          <a href="{% url 'mualai' %}"
+              class="menu-link">
+              <i class="menu-icon tf-icons bx bx-cart"></i>
+            <div class="text-truncate" data-i18n="Mua lại">Mua lại</div>
+           </a>
+          </li>
+        
+         <li class="menu-item {% if active_menu == 'nhanviens' %}active{% endif %}">
+        <a href="{% url 'nhanviens' %}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-group"></i>
+          <div class="text-truncate">Nhân viên</div>
+        </a>
+      </li>
+
+      <!-- Mục Doanh thu -->
+      <li class="menu-item {% if active_menu == 'doanhthu' %}active{% endif %}">
+        <a href="{% url 'doanhthu' %}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-bar-chart"></i>
+          <div class="text-truncate">Doanh thu</div>
+        </a>
+      </li>
+
+      <!-- Mục Khai báo -->
+      <li class="menu-item {% if active_menu == 'khaibao' %}active{% endif %}">
+        <a href="{% url 'khaibao' %}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-calendar"></i>
+          <div class="text-truncate">Khai báo</div>
+        </a>
+      </li>
+ <!-- Mục Tích điểm -->
+ <li class="menu-item {% if active_menu == 'tichdiem' %}active{% endif %}">
+  <a href="{% url 'tichdiem' %}" class="menu-link">
+      <i class="menu-icon tf-icons bx bx-star"></i>
+    <div class="text-truncate">Tích điểm</div>
+  </a>
+</li>
+      <!-- Mục Dashboard -->
+       <li class="menu-item {% if active_menu == 'dashboard' %}active{% endif %}">
+        <a href="{% url 'dashboard' %}" class="menu-link">
+           <i class="menu-icon tf-icons bx bx-tachometer"></i>
+          <div class="text-truncate">Dashboard</div>
+        </a>
+       </li>
+
+    </ul>
+
+    <div class="icon-tube">
+        <div class="icon-tube-inner">
+         <i class="bx bxs-ring icon-tube-item"></i>
+         <i class="bx bxs-diamond icon-tube-item"></i>
+         <i class="bx bxs-heart icon-tube-item"></i>
+          <i class="bx bxs-ring icon-tube-item"></i>
+         <i class="bx bxs-diamond icon-tube-item"></i>
+         <i class="bx bxs-heart icon-tube-item"></i>
+         <i class="bx bxs-ring icon-tube-item"></i>
+         <i class="bx bxs-diamond icon-tube-item"></i>
+         <i class="bx bxs-heart icon-tube-item"></i>
+         <i class="bx bxs-ring icon-tube-item"></i>
+          <i class="bx bxs-diamond icon-tube-item"></i>
+         <i class="bx bxs-heart icon-tube-item"></i>
+
+         </div>
+    </div>
+
+</aside>
+<style>
+    /* Active Menu Item */
+    .menu-item.active > .menu-link {
+        background-color: rgba(231, 76, 60, 0.1); /* Light red background */
+    }
+    .menu-item.active > .menu-link > i,
+    .menu-item.active > .menu-link > div
+    {
+         color: #e74c3c !important; /* Red color for active item text and icons */
+     }
+
+    /* Icon Tube */
+    .icon-tube{
+        overflow: hidden;
+          position: relative;
+        height: 60px;
+        width: 100%;
+        background-color: rgba(0,0,0,0.03);
+    }
+      .icon-tube-inner {
+         display: flex;
+         width: fit-content; /* Make the inner div wrap its content */
+          animation: scrollIcons 20s linear infinite; /* infinite scrolling animation */
+     }
+     .icon-tube-item {
+          font-size: 24px;
+           margin: 10px;
+           color: rgba(0,0,0,0.2);
+     }
+
+    @keyframes scrollIcons {
+        from {
+          transform: translateX(0);
+        }
+        to {
+         transform: translateX(-100%); /* Scroll left by the width of the icons container */
+        }
+    }
+</style>

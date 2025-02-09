@@ -1,0 +1,1090 @@
+Watching for file changes with StatReloader
+Waiting for apps ready_event.
+Apps ready_event triggered. Sending autoreload_started signal.
+(0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.001) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+(0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+File C:\Program Files\Python313\Lib\urllib\response.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\asyncio\windows_events.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_lzma.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\email\_header_value_parser.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\importlib\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\protocols.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\hmac.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\re\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\futures.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\mime\base.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\ctypes\wintypes.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\gettext.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_bz2.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\string.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_queue.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\copyreg.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\base64mime.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\json\scanner.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\urllib\__init__.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\email\mime\multipart.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\contextvars.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\struct.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\zoneinfo\__init__.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\getpass.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\warnings.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\tempfile.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\threads.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\log.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\encodings\idna.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\iterators.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\utils.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\re\_compiler.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\http\cookies.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\typing.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\asyncio\queues.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\copy.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\encodings\utf_8.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\base64.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\keyword.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\coroutines.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\zoneinfo\_common.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\graphlib.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\shutil.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\_compression.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\numbers.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\textwrap.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\quopri.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\dis.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\functools.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\windows_utils.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\subprocess.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_uuid.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\importlib\_abc.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\unicodedata.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\wsgiref\headers.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\glob.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\difflib.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\logging\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_asyncio.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\re\_casefix.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\constants.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\encodings\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\enum.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\logging\handlers.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\sysconfig\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\wsgiref\util.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\_markupbase.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\selector_events.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\inspect.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\pathlib\_local.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\_opcode_metadata.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\pathlib\_abc.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\header.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\datetime.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\ast.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\locale.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\exceptions.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\transports.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\urllib\error.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\email\mime\text.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\taskgroups.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_zoneinfo.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\secrets.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\ipaddress.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\gzip.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_decimal.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\uuid.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\pickle.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\charset.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\pprint.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\policy.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\traceback.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\asyncio\events.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\base_tasks.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\decimal.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\mime\nonmultipart.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\stringprep.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_overlapped.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\email\feedparser.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\operator.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\html\parser.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\ctypes\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\fnmatch.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\encodings\cp1252.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\ctypes\_endian.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\queue.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\random.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\mimetypes.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\runners.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\urllib\request.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\concurrent\futures\thread.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\reprlib.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\hashlib.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\pkgutil.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\socketserver.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\json\encoder.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\re\_constants.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_ctypes.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\lzma.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\contentmanager.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\urllib\parse.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\tokenize.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\html\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\re\_parser.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\json\decoder.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\select.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\selectors.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\generator.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\bz2.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\mime\message.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\calendar.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\wsgiref\simple_server.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\asyncio\timeouts.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\pathlib\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\sslproto.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\_weakrefset.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\tasks.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\weakref.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\contextlib.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\errors.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\argparse.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\_parseaddr.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\token.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\asyncio\trsock.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\encodings\aliases.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\concurrent\futures\_base.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\streams.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\staggered.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\format_helpers.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\dataclasses.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\message.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\zoneinfo\_tzpath.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\json\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\proactor_events.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\_colorize.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\locks.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\base_futures.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\opcode.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\nturl2path.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\encoders.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\concurrent\futures\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\base_events.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_ssl.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\wsgiref\__init__.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\types.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\signal.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\__future__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\quoprimime.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\wsgiref\handlers.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\bisect.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\subprocess.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_socket.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\email\mime\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\socket.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\threading.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\http\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\heapq.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\ssl.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\_policybase.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\http\server.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\concurrent\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\linecache.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\parser.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\html\entities.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_hashlib.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\DLLs\_wmi.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\email\_encoded_words.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\base_subprocess.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\mixins.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\collections\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\http\client.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\platform.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\headerregistry.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\logging\config.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\_compat_pickle.py first seen with mtime 1733288248.0
+Watching for file changes with StatReloader
+Waiting for apps ready_event.
+Apps ready_event triggered. Sending autoreload_started signal.
+(0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.001) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+(0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+File C:\Program Files\Python313\Lib\ctypes\_endian.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\select.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\ipaddress.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\http\server.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\hmac.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\calendar.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_ssl.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\asyncio\taskgroups.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\numbers.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\locale.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_hashlib.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\bisect.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\encodings\aliases.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\json\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\html\parser.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\tempfile.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\log.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\selectors.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\importlib\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\threading.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\_compat_pickle.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\getpass.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\pickle.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_overlapped.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\bz2.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_lzma.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\email\base64mime.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\policy.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\weakref.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\wsgiref\simple_server.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\urllib\__init__.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\asyncio\mixins.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_socket.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\_compression.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\contextvars.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\gettext.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\string.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\copyreg.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\urllib\response.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\_weakrefset.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\message.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\nturl2path.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_ctypes.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\asyncio\coroutines.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\heapq.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\streams.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\fnmatch.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\proactor_events.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_wmi.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\inspect.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\_encoded_words.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\zoneinfo\_common.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\urllib\error.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\email\utils.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_zoneinfo.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\collections\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\urllib\parse.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\socket.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\generator.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\random.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\platform.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\re\_compiler.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\protocols.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\quoprimime.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\feedparser.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_bz2.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\urllib\request.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\socketserver.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\charset.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\pprint.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\constants.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\header.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\windows_utils.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\windows_events.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\importlib\_abc.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\http\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\wsgiref\__init__.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\email\_policybase.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\encodings\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\__future__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\futures.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\logging\handlers.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\pathlib\_local.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\re\_casefix.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\locks.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\staggered.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\_markupbase.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\wsgiref\handlers.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\email\mime\nonmultipart.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\subprocess.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\logging\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\copy.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\types.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\DLLs\_uuid.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\wsgiref\headers.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\asyncio\sslproto.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\wsgiref\util.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\asyncio\base_events.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\headerregistry.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\concurrent\futures\_base.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\_opcode_metadata.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\subprocess.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\keyword.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\html\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\pathlib\_abc.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\iterators.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\pathlib\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\mime\message.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\queues.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\signal.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\token.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\datetime.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\http\cookies.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\threads.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\mime\base.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\traceback.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\asyncio\base_tasks.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\logging\config.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\enum.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\dataclasses.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\_header_value_parser.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\linecache.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\shutil.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\json\encoder.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\html\entities.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\glob.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\typing.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\email\mime\multipart.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\ctypes\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\functools.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\contentmanager.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\zoneinfo\_tzpath.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\re\_constants.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\ast.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\decimal.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\zoneinfo\__init__.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\asyncio\base_subprocess.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\ctypes\wintypes.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\re\_parser.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\encoders.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\unicodedata.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\mimetypes.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\opcode.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\concurrent\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\struct.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\concurrent\futures\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\reprlib.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\uuid.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\contextlib.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\runners.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\graphlib.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\warnings.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\email\mime\text.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\encodings\cp1252.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\pkgutil.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\textwrap.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\asyncio\exceptions.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\dis.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\selector_events.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\gzip.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\_colorize.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\events.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_decimal.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\argparse.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\operator.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\encodings\utf_8.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\lzma.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\secrets.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_asyncio.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\asyncio\tasks.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\queue.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\base_futures.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\http\client.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\base64.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\quopri.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\errors.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\_parseaddr.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\mime\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_queue.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\asyncio\transports.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\tokenize.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\json\scanner.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\hashlib.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\re\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\difflib.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\sysconfig\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\parser.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\concurrent\futures\thread.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\timeouts.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\json\decoder.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\ssl.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\format_helpers.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\trsock.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\encodings\idna.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\stringprep.py first seen with mtime 1733288248.0
+Watching for file changes with StatReloader
+Waiting for apps ready_event.
+Apps ready_event triggered. Sending autoreload_started signal.
+(0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+(0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+(0.002) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+(0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+File C:\Program Files\Python313\Lib\ctypes\_endian.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\sysconfig\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\mime\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\timeouts.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\header.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\calendar.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\utils.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\re\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\errors.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\tasks.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\base_events.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\pathlib\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\transports.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\contextvars.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\runners.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\_encoded_words.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_bz2.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\email\mime\nonmultipart.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\concurrent\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\_header_value_parser.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\dataclasses.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\token.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\importlib\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\events.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\sslproto.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\json\encoder.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\selectors.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\_markupbase.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\encodings\utf_8.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\graphlib.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\concurrent\futures\thread.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\streams.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\traceback.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\contextlib.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\weakref.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\http\server.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\re\_parser.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\base_subprocess.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\warnings.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\wsgiref\__init__.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\urllib\response.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\encodings\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\struct.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\json\decoder.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\tempfile.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\importlib\_abc.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\hashlib.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\proactor_events.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\inspect.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\argparse.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\collections\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\random.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\locale.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\__future__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\unicodedata.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\linecache.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\json\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\glob.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\mime\text.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\_colorize.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\html\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\decimal.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\hmac.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\html\entities.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\concurrent\futures\_base.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\numbers.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\http\cookies.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\base_tasks.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\generator.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_uuid.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\DLLs\_wmi.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\platform.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\tokenize.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\uuid.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\mimetypes.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\getpass.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\string.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\lzma.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_socket.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\asyncio\constants.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\trsock.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\wsgiref\simple_server.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\email\mime\message.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\re\_constants.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\mime\multipart.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\windows_events.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\urllib\__init__.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\enum.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\urllib\error.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\email\iterators.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\reprlib.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_decimal.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\DLLs\select.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\textwrap.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\concurrent\futures\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\base64mime.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\feedparser.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\ast.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\locks.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\re\_casefix.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\heapq.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\_opcode_metadata.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\http\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\threading.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\json\scanner.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\re\_compiler.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\pprint.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\urllib\parse.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\DLLs\_overlapped.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\dis.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\wsgiref\util.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\asyncio\selector_events.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\format_helpers.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\ctypes\wintypes.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\logging\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\_parseaddr.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\ctypes\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\protocols.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\policy.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\encodings\cp1252.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\_compat_pickle.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\subprocess.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\socketserver.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\exceptions.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\wsgiref\handlers.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\bz2.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\headerregistry.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\log.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_asyncio.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\base64.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_queue.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\asyncio\queues.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\http\client.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\gzip.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\gettext.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\_policybase.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\base_futures.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\encoders.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\_weakrefset.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\signal.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\bisect.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\typing.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\copyreg.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\keyword.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\futures.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\quoprimime.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\windows_utils.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\zoneinfo\__init__.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\operator.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\opcode.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_zoneinfo.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\asyncio\staggered.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\types.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\asyncio\mixins.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\zoneinfo\_common.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\DLLs\_ssl.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\copy.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\charset.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\datetime.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\fnmatch.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\logging\handlers.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\socket.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\message.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_lzma.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\email\mime\base.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\ssl.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\secrets.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\parser.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\contentmanager.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\wsgiref\headers.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\asyncio\subprocess.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\logging\config.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\queue.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\ipaddress.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\pathlib\_local.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\quopri.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\threads.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\taskgroups.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\pathlib\_abc.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\_compression.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\asyncio\coroutines.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\urllib\request.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\functools.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\pickle.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\difflib.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\pkgutil.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\zoneinfo\_tzpath.py first seen with mtime 1733288250.0
+File C:\Program Files\Python313\Lib\encodings\aliases.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\shutil.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\email\__init__.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_ctypes.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\nturl2path.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\DLLs\_hashlib.pyd first seen with mtime 1733288292.0
+File C:\Program Files\Python313\Lib\html\parser.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\encodings\idna.py first seen with mtime 1733288248.0
+File C:\Program Files\Python313\Lib\stringprep.py first seen with mtime 1733288248.0
+INFO 2025-01-30 09:27:17,602 autoreload 11208 9916 Watching for file changes with StatReloader
+DEBUG 2025-01-30 09:27:17,604 autoreload 11208 9916 Waiting for apps ready_event.
+DEBUG 2025-01-30 09:27:17,661 autoreload 11208 9916 Apps ready_event triggered. Sending autoreload_started signal.
+DEBUG 2025-01-30 09:27:17,708 utils 11208 3232 (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-01-30 09:27:17,711 utils 11208 3232 (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-01-30 09:27:17,716 utils 11208 3232 (0.001) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2025-01-30 09:27:17,723 utils 11208 3232 (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2025-01-30 09:27:17,901 autoreload 11208 9916 File C:\Program Files\Python313\Lib\wsgiref\util.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:17,906 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\mime\nonmultipart.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:17,910 autoreload 11208 9916 File C:\Program Files\Python313\Lib\string.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:17,945 autoreload 11208 9916 File C:\Program Files\Python313\Lib\platform.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:17,945 autoreload 11208 9916 File C:\Program Files\Python313\Lib\lzma.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:17,988 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\feedparser.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:17,997 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\coroutines.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,005 autoreload 11208 9916 File C:\Program Files\Python313\Lib\encodings\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,019 autoreload 11208 9916 File C:\Program Files\Python313\Lib\base64.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,023 autoreload 11208 9916 File C:\Program Files\Python313\Lib\gettext.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,024 autoreload 11208 9916 File C:\Program Files\Python313\Lib\http\client.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,054 autoreload 11208 9916 File C:\Program Files\Python313\Lib\urllib\request.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:18,070 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\windows_events.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,088 autoreload 11208 9916 File C:\Program Files\Python313\Lib\urllib\__init__.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:18,097 autoreload 11208 9916 File C:\Program Files\Python313\Lib\pathlib\_abc.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,120 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\utils.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,133 autoreload 11208 9916 File C:\Program Files\Python313\DLLs\_ctypes.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:18,134 autoreload 11208 9916 File C:\Program Files\Python313\Lib\http\cookies.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,142 autoreload 11208 9916 File C:\Program Files\Python313\Lib\pkgutil.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,143 autoreload 11208 9916 File C:\Program Files\Python313\Lib\getpass.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,147 autoreload 11208 9916 File C:\Program Files\Python313\Lib\_compat_pickle.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,185 autoreload 11208 9916 File C:\Program Files\Python313\Lib\queue.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,185 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\mime\text.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,207 autoreload 11208 9916 File C:\Program Files\Python313\Lib\ast.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,212 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\charset.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,216 autoreload 11208 9916 File C:\Program Files\Python313\Lib\html\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,237 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\header.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,242 autoreload 11208 9916 File C:\Program Files\Python313\Lib\wsgiref\simple_server.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:18,242 autoreload 11208 9916 File C:\Program Files\Python313\Lib\threading.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:18,246 autoreload 11208 9916 File C:\Program Files\Python313\Lib\gzip.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,246 autoreload 11208 9916 File C:\Program Files\Python313\Lib\zoneinfo\_tzpath.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:18,251 autoreload 11208 9916 File C:\Program Files\Python313\Lib\functools.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,256 autoreload 11208 9916 File C:\Program Files\Python313\Lib\re\_constants.py first seen with mtime 1733288248.0
+INFO 2025-01-30 09:27:18,258 autoreload 10376 8276 Watching for file changes with StatReloader
+DEBUG 2025-01-30 09:27:18,259 autoreload 10376 8276 Waiting for apps ready_event.
+DEBUG 2025-01-30 09:27:18,260 autoreload 11208 9916 File C:\Program Files\Python313\Lib\decimal.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,265 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\tasks.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,298 autoreload 11208 9916 File C:\Program Files\Python313\Lib\uuid.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:18,307 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\log.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,317 autoreload 10376 8276 Apps ready_event triggered. Sending autoreload_started signal.
+DEBUG 2025-01-30 09:27:18,320 autoreload 11208 9916 File C:\Program Files\Python313\Lib\hashlib.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,320 autoreload 11208 9916 File C:\Program Files\Python313\Lib\reprlib.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,373 utils 10376 19688 (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+DEBUG 2025-01-30 09:27:18,377 utils 10376 19688 (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+DEBUG 2025-01-30 09:27:18,384 utils 10376 19688 (0.001) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+DEBUG 2025-01-30 09:27:18,405 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\iterators.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,406 autoreload 11208 9916 File C:\Program Files\Python313\DLLs\_uuid.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:18,400 utils 10376 19688 (0.001) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+DEBUG 2025-01-30 09:27:18,416 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\futures.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,416 autoreload 11208 9916 File C:\Program Files\Python313\Lib\linecache.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,433 autoreload 11208 9916 File C:\Program Files\Python313\Lib\fnmatch.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,442 autoreload 11208 9916 File C:\Program Files\Python313\Lib\random.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,447 autoreload 11208 9916 File C:\Program Files\Python313\Lib\difflib.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,465 autoreload 11208 9916 File C:\Program Files\Python313\Lib\calendar.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,487 autoreload 11208 9916 File C:\Program Files\Python313\Lib\urllib\error.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:18,487 autoreload 11208 9916 File C:\Program Files\Python313\Lib\locale.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,492 autoreload 11208 9916 File C:\Program Files\Python313\Lib\secrets.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,519 autoreload 11208 9916 File C:\Program Files\Python313\Lib\zoneinfo\_common.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:18,534 autoreload 11208 9916 File C:\Program Files\Python313\DLLs\_asyncio.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:18,534 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\protocols.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,544 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\sslproto.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,550 autoreload 11208 9916 File C:\Program Files\Python313\Lib\contextvars.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,556 autoreload 11208 9916 File C:\Program Files\Python313\DLLs\_queue.pyd first seen with mtime 1733288292.0
+0
+DEBUG 2025-01-30 09:27:18,556 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\sslproto.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,566 autoreload 10376 8276 File C:\Program Files\Python313\DLLs\_wmi.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:18,586 autoreload 11208 9916 File C:\Program Files\Python313\Lib\typing.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:18,601 autoreload 11208 9916 File C:\Program Files\Python313\Lib\_weakrefset.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,610 autoreload 10376 8276 File C:\Program Files\Python313\Lib\inspect.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,611 autoreload 11208 9916 File C:\Program Files\Python313\Lib\struct.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,615 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\headerregistry.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,616 autoreload 11208 9916 File C:\Program Files\Python313\Lib\warnings.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:18,631 autoreload 11208 9916 File C:\Program Files\Python313\Lib\concurrent\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,646 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\mime\message.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,652 autoreload 11208 9916 File C:\Program Files\Python313\Lib\importlib\_abc.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,652 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\mime\base.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,658 autoreload 11208 9916 File C:\Program Files\Python313\Lib\ctypes\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,663 autoreload 11208 9916 File C:\Program Files\Python313\Lib\textwrap.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:18,664 autoreload 11208 9916 File C:\Program Files\Python313\Lib\bisect.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,664 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\staggered.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,677 autoreload 10376 8276 File C:\Program Files\Python313\Lib\decimal.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,705 autoreload 11208 9916 File C:\Program Files\Python313\Lib\traceback.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:18,723 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\mime\message.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,724 autoreload 10376 8276 File C:\Program Files\Python313\Lib\ctypes\_endian.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,743 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\base_futures.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,753 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\errors.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,757 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\locks.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,758 autoreload 10376 8276 File C:\Program Files\Python313\DLLs\_bz2.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:18,763 autoreload 10376 8276 File C:\Program Files\Python313\Lib\uuid.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:18,780 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\windows_utils.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,780 autoreload 11208 9916 File C:\Program Files\Python313\Lib\pickle.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,786 autoreload 11208 9916 File C:\Program Files\Python313\DLLs\_overlapped.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:18,797 autoreload 11208 9916 File C:\Program Files\Python313\Lib\logging\config.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,800 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\log.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,810 autoreload 10376 8276 File C:\Program Files\Python313\DLLs\_overlapped.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:18,813 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\subprocess.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,815 autoreload 10376 8276 File C:\Program Files\Python313\Lib\importlib\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,835 autoreload 10376 8276 File C:\Program Files\Python313\Lib\pathlib\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,841 autoreload 10376 8276 File C:\Program Files\Python313\Lib\platform.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,841 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\_header_value_parser.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,843 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\_encoded_words.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,848 autoreload 11208 9916 File C:\Program Files\Python313\Lib\bz2.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,851 autoreload 10376 8276 File C:\Program Files\Python313\Lib\tempfile.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,868 autoreload 11208 9916 File C:\Program Files\Python313\Lib\ctypes\wintypes.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,879 autoreload 11208 9916 File C:\Program Files\Python313\Lib\__future__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,881 autoreload 10376 8276 File C:\Program Files\Python313\Lib\re\_compiler.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,892 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\generator.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,892 autoreload 10376 8276 File C:\Program Files\Python313\Lib\gzip.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,898 autoreload 10376 8276 File C:\Program Files\Python313\Lib\glob.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,898 autoreload 10376 8276 File C:\Program Files\Python313\Lib\enum.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,899 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\exceptions.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,899 autoreload 10376 8276 File C:\Program Files\Python313\Lib\wsgiref\simple_server.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:18,916 autoreload 10376 8276 File C:\Program Files\Python313\Lib\encodings\cp1252.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,916 autoreload 10376 8276 File C:\Program Files\Python313\Lib\concurrent\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,933 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\futures.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,933 autoreload 10376 8276 File C:\Program Files\Python313\Lib\reprlib.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,938 autoreload 11208 9916 File C:\Program Files\Python313\Lib\html\parser.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,938 autoreload 10376 8276 File C:\Program Files\Python313\Lib\base64.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,949 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\base64mime.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,949 autoreload 11208 9916 File C:\Program Files\Python313\Lib\_markupbase.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,959 autoreload 11208 9916 File C:\Program Files\Python313\Lib\re\_parser.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,964 autoreload 10376 8276 File C:\Program Files\Python313\Lib\html\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,969 autoreload 10376 8276 File C:\Program Files\Python313\Lib\collections\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,979 autoreload 10376 8276 File C:\Program Files\Python313\Lib\concurrent\futures\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,980 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\base_subprocess.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,991 autoreload 10376 8276 File C:\Program Files\Python313\Lib\lzma.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,991 autoreload 10376 8276 File C:\Program Files\Python313\Lib\dis.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:18,996 autoreload 11208 9916 File C:\Program Files\Python313\Lib\re\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,021 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\_policybase.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,021 autoreload 10376 8276 File C:\Program Files\Python313\Lib\ssl.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,025 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\runners.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,031 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\message.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,032 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\base_tasks.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,043 autoreload 11208 9916 File C:\Program Files\Python313\Lib\ssl.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,053 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\threads.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,064 autoreload 11208 9916 File C:\Program Files\Python313\Lib\copyreg.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,068 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\feedparser.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,069 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\windows_utils.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,084 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\format_helpers.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,084 autoreload 11208 9916 File C:\Program Files\Python313\Lib\encodings\aliases.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,084 autoreload 11208 9916 File C:\Program Files\Python313\Lib\re\_casefix.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,084 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\encoders.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,089 autoreload 10376 8276 File C:\Program Files\Python313\Lib\re\_casefix.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,099 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\base_events.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,116 autoreload 10376 8276 File C:\Program Files\Python313\DLLs\select.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:19,116 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\selector_events.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,138 autoreload 10376 8276 File C:\Program Files\Python313\Lib\textwrap.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:19,148 autoreload 11208 9916 File C:\Program Files\Python313\Lib\concurrent\futures\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,154 autoreload 11208 9916 File C:\Program Files\Python313\Lib\wsgiref\headers.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:19,154 autoreload 11208 9916 File C:\Program Files\Python313\Lib\wsgiref\handlers.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:19,159 autoreload 10376 8276 File C:\Program Files\Python313\DLLs\_socket.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:19,164 autoreload 10376 8276 File C:\Program Files\Python313\Lib\_compat_pickle.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,165 autoreload 10376 8276 File C:\Program Files\Python313\Lib\http\server.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,169 autoreload 10376 8276 File C:\Program Files\Python313\Lib\encodings\utf_8.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,170 autoreload 10376 8276 File C:\Program Files\Python313\Lib\argparse.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,181 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\mixins.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,181 autoreload 10376 8276 File C:\Program Files\Python313\Lib\http\client.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,185 autoreload 11208 9916 File C:\Program Files\Python313\Lib\logging\handlers.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,201 autoreload 10376 8276 File C:\Program Files\Python313\Lib\tokenize.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:19,207 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\subprocess.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,207 autoreload 10376 8276 File C:\Program Files\Python313\Lib\pickle.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,207 autoreload 10376 8276 File C:\Program Files\Python313\Lib\wsgiref\util.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:19,207 autoreload 10376 8276 File C:\Program Files\Python313\Lib\threading.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:19,207 autoreload 10376 8276 File C:\Program Files\Python313\Lib\urllib\parse.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:19,210 autoreload 11208 9916 File C:\Program Files\Python313\Lib\encodings\utf_8.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,211 autoreload 11208 9916 File C:\Program Files\Python313\Lib\dataclasses.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,213 autoreload 10376 8276 File C:\Program Files\Python313\DLLs\_queue.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:19,216 autoreload 11208 9916 File C:\Program Files\Python313\DLLs\_zoneinfo.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:19,223 autoreload 10376 8276 File C:\Program Files\Python313\Lib\random.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,226 autoreload 11208 9916 File C:\Program Files\Python313\Lib\html\entities.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,227 autoreload 11208 9916 File C:\Program Files\Python313\Lib\inspect.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,242 autoreload 11208 9916 File C:\Program Files\Python313\Lib\glob.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,247 autoreload 11208 9916 File C:\Program Files\Python313\Lib\token.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:19,249 autoreload 10376 8276 File C:\Program Files\Python313\Lib\concurrent\futures\_base.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,303 autoreload 11208 9916 File C:\Program Files\Python313\Lib\collections\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,304 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\timeouts.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,313 autoreload 11208 9916 File C:\Program Files\Python313\Lib\importlib\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,324 autoreload 10376 8276 File C:\Program Files\Python313\Lib\bz2.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,333 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\base_subprocess.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,354 autoreload 11208 9916 File C:\Program Files\Python313\Lib\http\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,354 autoreload 11208 9916 File C:\Program Files\Python313\DLLs\unicodedata.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:19,360 autoreload 11208 9916 File C:\Program Files\Python313\Lib\datetime.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,363 autoreload 10376 8276 File C:\Program Files\Python313\DLLs\_hashlib.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:19,364 autoreload 11208 9916 File C:\Program Files\Python313\Lib\concurrent\futures\_base.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,365 autoreload 11208 9916 File C:\Program Files\Python313\Lib\urllib\response.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:19,369 autoreload 10376 8276 File C:\Program Files\Python313\Lib\__future__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,370 autoreload 11208 9916 File C:\Program Files\Python313\Lib\pathlib\_local.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,375 autoreload 11208 9916 File C:\Program Files\Python313\Lib\json\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,384 autoreload 10376 8276 File C:\Program Files\Python313\Lib\pathlib\_abc.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,389 autoreload 10376 8276 File C:\Program Files\Python313\Lib\_colorize.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,390 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\generator.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,390 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\timeouts.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,401 autoreload 11208 9916 File C:\Program Files\Python313\Lib\operator.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,401 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\base_events.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,416 autoreload 10376 8276 File C:\Program Files\Python313\Lib\re\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,416 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\proactor_events.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,440 autoreload 11208 9916 File C:\Program Files\Python313\Lib\dis.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,446 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\locks.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,469 autoreload 11208 9916 File C:\Program Files\Python313\Lib\heapq.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,500 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\taskgroups.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,505 autoreload 11208 9916 File C:\Program Files\Python313\Lib\contextlib.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,506 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\transports.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,509 autoreload 10376 8276 File C:\Program Files\Python313\Lib\quopri.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,515 autoreload 10376 8276 File C:\Program Files\Python313\Lib\nturl2path.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,516 autoreload 10376 8276 File C:\Program Files\Python313\Lib\weakref.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:19,525 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\mime\multipart.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,562 autoreload 10376 8276 File C:\Program Files\Python313\Lib\datetime.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,571 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\mime\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,571 autoreload 11208 9916 File C:\Program Files\Python313\Lib\quopri.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,572 autoreload 11208 9916 File C:\Program Files\Python313\DLLs\_hashlib.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:19,572 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\quoprimime.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,582 autoreload 10376 8276 File C:\Program Files\Python313\Lib\pkgutil.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,587 autoreload 10376 8276 File C:\Program Files\Python313\Lib\getpass.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,588 autoreload 10376 8276 File C:\Program Files\Python313\Lib\json\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,588 autoreload 10376 8276 File C:\Program Files\Python313\DLLs\_lzma.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:19,592 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\queues.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,592 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\events.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,603 autoreload 11208 9916 File C:\Program Files\Python313\DLLs\_lzma.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:19,609 autoreload 11208 9916 File C:\Program Files\Python313\Lib\tempfile.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,618 autoreload 10376 8276 File C:\Program Files\Python313\Lib\pathlib\_local.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,619 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\base64mime.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,624 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\mime\nonmultipart.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,629 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\streams.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,644 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\base_tasks.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,645 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\mime\text.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,649 autoreload 11208 9916 File C:\Program Files\Python313\Lib\pathlib\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,654 autoreload 10376 8276 File C:\Program Files\Python313\Lib\struct.py first seen with mtime 1733288248.0
+.0
+DEBUG 2025-01-30 09:27:19,676 autoreload 11208 9916 File C:\Program Files\Python313\DLLs\_decimal.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:19,676 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\taskgroups.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,676 autoreload 10376 8276 File C:\Program Files\Python313\Lib\difflib.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,701 autoreload 11208 9916 File C:\Program Files\Python313\Lib\ipaddress.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,701 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\headerregistry.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,701 autoreload 11208 9916 File C:\Program Files\Python313\Lib\_colorize.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,711 autoreload 11208 9916 File C:\Program Files\Python313\Lib\selectors.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,712 autoreload 11208 9916 File C:\Program Files\Python313\Lib\shutil.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,726 autoreload 10376 8276 File C:\Program Files\Python313\Lib\dataclasses.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,727 autoreload 11208 9916 File C:\Program Files\Python313\Lib\pprint.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,727 autoreload 11208 9916 File C:\Program Files\Python313\Lib\zoneinfo\__init__.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:19,732 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\base_futures.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,742 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\contentmanager.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,742 autoreload 11208 9916 File C:\Program Files\Python313\Lib\_opcode_metadata.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,751 autoreload 10376 8276 File C:\Program Files\Python313\DLLs\_uuid.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:19,753 autoreload 11208 9916 File C:\Program Files\Python313\Lib\socket.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,758 autoreload 11208 9916 File C:\Program Files\Python313\Lib\numbers.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,789 autoreload 11208 9916 File C:\Program Files\Python313\Lib\argparse.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,791 autoreload 10376 8276 File C:\Program Files\Python313\Lib\_markupbase.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,810 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\trsock.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,810 autoreload 11208 9916 File C:\Program Files\Python313\Lib\ctypes\_endian.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,811 autoreload 11208 9916 File C:\Program Files\Python313\Lib\concurrent\futures\thread.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,811 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,818 autoreload 10376 8276 File C:\Program Files\Python313\Lib\re\_constants.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,827 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\_policybase.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,829 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\windows_events.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,853 autoreload 11208 9916 File C:\Program Files\Python313\Lib\encodings\cp1252.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,854 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\proactor_events.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,855 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\mime\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,864 autoreload 10376 8276 File C:\Program Files\Python313\Lib\socket.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,869 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\exceptions.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,870 autoreload 11208 9916 File C:\Program Files\Python313\Lib\urllib\parse.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:19,887 autoreload 11208 9916 File C:\Program Files\Python313\Lib\_compression.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,906 autoreload 11208 9916 File C:\Program Files\Python313\Lib\enum.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,907 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\constants.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,914 autoreload 10376 8276 File C:\Program Files\Python313\Lib\_compression.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,936 autoreload 11208 9916 File C:\Program Files\Python313\DLLs\_ssl.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:19,936 autoreload 11208 9916 File C:\Program Files\Python313\Lib\logging\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,941 autoreload 11208 9916 File C:\Program Files\Python313\DLLs\_wmi.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:19,945 autoreload 10376 8276 File C:\Program Files\Python313\Lib\contextlib.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,950 autoreload 10376 8276 File C:\Program Files\Python313\Lib\urllib\request.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:19,950 autoreload 11208 9916 File C:\Program Files\Python313\Lib\json\scanner.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,950 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\iterators.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,951 autoreload 10376 8276 File C:\Program Files\Python313\Lib\wsgiref\handlers.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:19,951 autoreload 11208 9916 File C:\Program Files\Python313\Lib\weakref.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:19,951 autoreload 10376 8276 File C:\Program Files\Python313\DLLs\_zoneinfo.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:19,956 autoreload 10376 8276 File C:\Program Files\Python313\Lib\encodings\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,956 autoreload 10376 8276 File C:\Program Files\Python313\Lib\json\decoder.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,961 autoreload 10376 8276 File C:\Program Files\Python313\Lib\calendar.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,966 autoreload 11208 9916 File C:\Program Files\Python313\Lib\json\encoder.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,966 autoreload 10376 8276 File C:\Program Files\Python313\Lib\http\cookies.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,996 autoreload 11208 9916 File C:\Program Files\Python313\Lib\signal.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,996 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\queues.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:19,996 autoreload 11208 9916 File C:\Program Files\Python313\Lib\socketserver.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,001 autoreload 11208 9916 File C:\Program Files\Python313\Lib\subprocess.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,052 autoreload 10376 8276 File C:\Program Files\Python313\Lib\wsgiref\__init__.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:20,068 autoreload 10376 8276 File C:\Program Files\Python313\Lib\json\encoder.py first seen with mtime 1733288248.0
+
+DEBUG 2025-01-30 09:27:20,068 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\errors.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,068 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\quoprimime.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,068 autoreload 11208 9916 File C:\Program Files\Python313\Lib\graphlib.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,073 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\charset.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,074 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,074 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\trsock.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,131 autoreload 11208 9916 File C:\Program Files\Python313\Lib\tokenize.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:20,132 autoreload 11208 9916 File C:\Program Files\Python313\Lib\types.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:20,141 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\format_helpers.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,141 autoreload 11208 9916 File C:\Program Files\Python313\DLLs\_bz2.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:20,162 autoreload 11208 9916 File C:\Program Files\Python313\Lib\http\server.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,167 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\policy.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,167 autoreload 11208 9916 File C:\Program Files\Python313\Lib\re\_compiler.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,172 autoreload 11208 9916 File C:\Program Files\Python313\Lib\json\decoder.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,186 autoreload 10376 8276 File C:\Program Files\Python313\Lib\ast.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,191 autoreload 11208 9916 File C:\Program Files\Python313\Lib\wsgiref\__init__.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:20,201 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\_header_value_parser.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,205 autoreload 10376 8276 File C:\Program Files\Python313\Lib\warnings.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:20,206 autoreload 10376 8276 File C:\Program Files\Python313\DLLs\unicodedata.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:20,206 autoreload 11208 9916 File C:\Program Files\Python313\DLLs\select.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:20,212 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\_parseaddr.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,212 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\parser.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,213 autoreload 11208 9916 File C:\Program Files\Python313\Lib\mimetypes.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,216 autoreload 10376 8276 File C:\Program Files\Python313\Lib\logging\handlers.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,222 autoreload 11208 9916 File C:\Program Files\Python313\Lib\copy.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,242 autoreload 11208 9916 File C:\Program Files\Python313\Lib\keyword.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,250 autoreload 10376 8276 File C:\Program Files\Python313\Lib\html\parser.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,256 autoreload 10376 8276 File C:\Program Files\Python313\Lib\html\entities.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,269 autoreload 11208 9916 File C:\Program Files\Python313\Lib\sysconfig\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,278 autoreload 10376 8276 File C:\Program Files\Python313\Lib\mimetypes.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,298 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\tasks.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,304 autoreload 11208 9916 File C:\Program Files\Python313\Lib\email\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,312 autoreload 10376 8276 File C:\Program Files\Python313\Lib\operator.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,313 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\threads.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,332 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\contentmanager.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,337 autoreload 10376 8276 File C:\Program Files\Python313\DLLs\_ctypes.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:20,337 autoreload 11208 9916 File C:\Program Files\Python313\Lib\hmac.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,338 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\parser.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,338 autoreload 10376 8276 File C:\Program Files\Python313\Lib\contextvars.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,338 autoreload 10376 8276 File C:\Program Files\Python313\DLLs\_ssl.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:20,338 autoreload 10376 8276 File C:\Program Files\Python313\Lib\graphlib.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,342 autoreload 11208 9916 File C:\Program Files\Python313\DLLs\_socket.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:20,378 autoreload 11208 9916 File C:\Program Files\Python313\Lib\opcode.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,378 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\_encoded_words.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,379 autoreload 10376 8276 File C:\Program Files\Python313\Lib\subprocess.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,379 autoreload 10376 8276 File C:\Program Files\Python313\Lib\linecache.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,379 autoreload 10376 8276 File C:\Program Files\Python313\Lib\ctypes\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,380 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\runners.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,401 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\staggered.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,406 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\message.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,411 autoreload 10376 8276 File C:\Program Files\Python313\Lib\signal.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,411 autoreload 10376 8276 File C:\Program Files\Python313\Lib\ctypes\wintypes.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,415 autoreload 11208 9916 File C:\Program Files\Python313\Lib\asyncio\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,417 autoreload 10376 8276 File C:\Program Files\Python313\Lib\_opcode_metadata.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,423 autoreload 10376 8276 File C:\Program Files\Python313\Lib\locale.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,429 autoreload 10376 8276 File C:\Program Files\Python313\Lib\urllib\response.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:20,434 autoreload 10376 8276 File C:\Program Files\Python313\DLLs\_asyncio.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:20,439 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\protocols.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,450 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\header.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,450 autoreload 10376 8276 File C:\Program Files\Python313\Lib\logging\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,450 autoreload 10376 8276 File C:\Program Files\Python313\Lib\secrets.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,479 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\coroutines.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,525 autoreload 10376 8276 File C:\Program Files\Python313\Lib\copy.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,566 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\utils.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,566 autoreload 10376 8276 File C:\Program Files\Python313\Lib\keyword.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,566 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\mime\base.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,566 autoreload 10376 8276 File C:\Program Files\Python313\Lib\selectors.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,571 autoreload 10376 8276 File C:\Program Files\Python313\Lib\logging\config.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,583 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\transports.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,583 autoreload 10376 8276 File C:\Program Files\Python313\Lib\zoneinfo\_common.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:20,610 autoreload 10376 8276 File C:\Program Files\Python313\Lib\gettext.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,625 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\encoders.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,625 autoreload 10376 8276 File C:\Program Files\Python313\Lib\typing.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:20,635 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\selector_events.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,650 autoreload 10376 8276 File C:\Program Files\Python313\Lib\copyreg.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,660 autoreload 10376 8276 File C:\Program Files\Python313\Lib\pprint.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,665 autoreload 10376 8276 File C:\Program Files\Python313\Lib\heapq.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,709 autoreload 10376 8276 File C:\Program Files\Python313\Lib\importlib\_abc.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,730 autoreload 10376 8276 File C:\Program Files\Python313\Lib\string.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,773 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\policy.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,782 autoreload 10376 8276 File C:\Program Files\Python313\Lib\shutil.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,818 autoreload 10376 8276 File C:\Program Files\Python313\Lib\sysconfig\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,826 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\events.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,833 autoreload 10376 8276 File C:\Program Files\Python313\Lib\functools.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,863 autoreload 10376 8276 File C:\Program Files\Python313\Lib\traceback.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:20,863 autoreload 10376 8276 File C:\Program Files\Python313\Lib\wsgiref\headers.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:20,864 autoreload 10376 8276 File C:\Program Files\Python313\Lib\urllib\__init__.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:20,905 autoreload 10376 8276 File C:\Program Files\Python313\Lib\token.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:20,905 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\streams.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,906 autoreload 10376 8276 File C:\Program Files\Python313\Lib\json\scanner.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,910 autoreload 10376 8276 File C:\Program Files\Python313\Lib\zoneinfo\__init__.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:20,911 autoreload 10376 8276 File C:\Program Files\Python313\DLLs\_decimal.pyd first seen with mtime 1733288292.0
+DEBUG 2025-01-30 09:27:20,911 autoreload 10376 8276 File C:\Program Files\Python313\Lib\re\_parser.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,952 autoreload 10376 8276 File C:\Program Files\Python313\Lib\urllib\error.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:20,953 autoreload 10376 8276 File C:\Program Files\Python313\Lib\encodings\aliases.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,953 autoreload 10376 8276 File C:\Program Files\Python313\Lib\hmac.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,962 autoreload 10376 8276 File C:\Program Files\Python313\Lib\zoneinfo\_tzpath.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:20,963 autoreload 10376 8276 File C:\Program Files\Python313\Lib\queue.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,963 autoreload 10376 8276 File C:\Program Files\Python313\Lib\concurrent\futures\thread.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,972 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\_parseaddr.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:20,976 autoreload 10376 8276 File C:\Program Files\Python313\Lib\ipaddress.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:21,027 autoreload 10376 8276 File C:\Program Files\Python313\Lib\http\__init__.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:21,049 autoreload 10376 8276 File C:\Program Files\Python313\Lib\fnmatch.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:21,068 autoreload 10376 8276 File C:\Program Files\Python313\Lib\bisect.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:21,081 autoreload 10376 8276 File C:\Program Files\Python313\Lib\types.py first seen with mtime 1733288250.0
+DEBUG 2025-01-30 09:27:21,082 autoreload 10376 8276 File C:\Program Files\Python313\Lib\socketserver.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:21,123 autoreload 10376 8276 File C:\Program Files\Python313\Lib\numbers.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:21,123 autoreload 10376 8276 File C:\Program Files\Python313\Lib\opcode.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:21,123 autoreload 10376 8276 File C:\Program Files\Python313\Lib\email\mime\multipart.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:21,150 autoreload 10376 8276 File C:\Program Files\Python313\Lib\hashlib.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:21,150 autoreload 10376 8276 File C:\Program Files\Python313\Lib\asyncio\constants.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:21,811 autoreload 11208 9916 File C:\Program Files\Python313\Lib\stringprep.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:21,826 autoreload 11208 9916 File C:\Program Files\Python313\Lib\encodings\idna.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:22,569 autoreload 10376 8276 File C:\Program Files\Python313\Lib\stringprep.py first seen with mtime 1733288248.0
+DEBUG 2025-01-30 09:27:22,593 autoreload 10376 8276 File C:\Program Files\Python313\Lib\encodings\idna.py first seen with mtime 1733288248.0

@@ -1,0 +1,415 @@
+{% extends "master-page.html" %}
+{% load static %}
+
+{% block left-menu %}
+    {%include 'includes/left-menu.html'%}
+{% endblock %}
+
+{% block content %}
+    <div class="container-xxl flex-grow-1 container-p-y">
+        <!-- Input Sizing -->
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+              <h5 class="card-header">Chỉnh sửa quầy số {{ quaybanhang.ma_quay }}: {{ quaybanhang.ten_quay }}</h5>
+              <div class="card-body">
+                <small class="text-light fw-medium">Thông tin quầy</small>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mt-2 mb-4">
+                        <label for="tenQuay" class="form-label">Tên quầy</label>
+                        <input
+                        id="tenQuay"
+                        class="form-control form-control-lg"
+                        type="text"
+                        value="{{ quaybanhang.ten_quay }}"
+                         placeholder="Nhập tên quầy" />
+                    </div>
+
+                    <div class="mb-4">
+                      <label for="nhanVienPhuTrach" class="form-label">Nhân viên phụ trách</label>
+                      <div class="input-group">
+                        <select id="nhanVienPhuTrach" class="form-select" disabled style="appearance: none; -webkit-appearance: none; -moz-appearance: none; background-image: none;">
+                          <option value="">Chọn nhân viên</option>
+                          {% for nhanvien in nhanviens %}
+                            <option value="{{ nhanvien.ma_nhan_vien }}"
+                            {% if quaybanhang.nhan_vien_phu_trach == nhanvien %} selected {% endif %}
+                                >
+                              {{ nhanvien.ho_ten }}
+                            </option>
+                          {% endfor %}
+                        </select>
+                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#changeStaffModal">
+                            Thay đổi nhân viên
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="modal fade" id="changeStaffModal" tabindex="-1" aria-labelledby="changeStaffModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="changeStaffModalLabel">Thay đổi nhân viên phụ trách</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form method="post" id="changeStaffForm">
+                                    {% csrf_token %}
+                                    <div class="mb-3">
+                                        <label for="newNhanVienPhuTrach" class="form-label">Chọn nhân viên mới</label>
+                                        <select class="form-select" name="new_nhan_vien_phu_trach" id="newNhanVienPhuTrach">
+                                            {% for nhanvien in nhanviens %}
+                                            <option value="{{ nhanvien.ma_nhan_vien }}">
+                                                {{ nhanvien.ho_ten }}
+                                            </option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                                    <button type="button" class="btn btn-primary" onclick="document.getElementById('changeStaffForm').submit()">Lưu thay đổi</button>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                        <div class="mb-4">
+                        <label class="form-label">Danh sách sản phẩm tại quầy</label>
+                          <ul class="list-group">
+                            {% for sanpham in sanphams %}
+                              <li class="list-group-item">{{ sanpham.ten_san_pham }} ({{ sanpham.ma_san_pham }})</li>
+                            {% empty %}
+                                <li class="list-group-item">Không có sản phẩm nào ở quầy này</li>
+                            {% endfor %}
+                          </ul>
+                       </div>
+                       <div class="mb-4">
+                         <label for="tongDonBan" class="form-label">Tổng đơn đã bán</label>
+                         <input type="text" class="form-control" id="tongDonBan" value="{{ tong_don_ban }}" readonly>
+                       </div>
+
+                    <hr class="m-0" />
+                      <div class="card-body">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div>
+                                  <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                              </div>
+                            <div>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Chức năng
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <h6 class="dropdown-header">Lập hóa đơn tại quầy</h6>
+                                     <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#createHoaDonModal">Tạo hóa đơn bán hàng</a>
+                                     <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#printHoaDonModal">In hóa đơn bán hàng</a>
+                                      <button class="dropdown-item" data-bs-toggle="modal" data-bs-target="#nhapMaHangModal">Nhập trực tiếp mã hàng</button>
+                                      <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#quetBarcodeModal">Quét barcode</a>
+                                       <div class="dropdown-divider"></div>
+                                       <h6 class="dropdown-header">Quản lý bảo hành</h6>
+                                       <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#inPhieuBaoHanhModal">In phiếu bảo hành</a>
+                                       <div class="dropdown-divider"></div>
+                                       <h6 class="dropdown-header">Tính giá bán</h6>
+                                         <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#tinhGiaModal">Tính giá theo công thức
+                                         <ul class="dropdown-menu dropdown-submenu">
+                                          <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#tinhGiaBanModal">Giá bán = Giá vốn * Tỉ lệ áp giá</a></li>
+                                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#tinhGiaVonModal">Giá vốn = Giá vàng * Trọng lượng + Tiền công + Tiền gia công</a></li>
+                                             </ul>
+                                        </a>
+                                         <div class="dropdown-divider"></div>
+                                        <h6 class="dropdown-header">Quản lý nhân viên và quầy</h6>
+                                           <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#quanLyNhanVienModal">Quản lý thông tin nhân viên</a>
+                                       <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#quanLyQuayModal">Quản lý thông tin quầy</a>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                         </div>
+                  </form>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <!-- Modal tạo hóa đơn bán hàng -->
+    <div class="modal fade" id="createHoaDonModal" tabindex="-1" aria-labelledby="createHoaDonModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createHoaDonModalLabel">Tạo hóa đơn bán hàng</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+           <form method="post" id="createHoaDonForm">
+                {% csrf_token %}
+            <div class="modal-body">
+                <div class="mb-3">
+                <label for="maHoaDon" class="form-label">Mã hóa đơn</label>
+                <input type="text" class="form-control" id="maHoaDon" name="ma_hoa_don" required>
+              </div>
+             <div class="mb-3">
+                <label for="ngayLap" class="form-label">Ngày lập</label>
+                <input type="datetime-local" class="form-control" id="ngayLap" name="ngay_lap" required>
+             </div>
+            <div class="mb-3">
+              <label for="tongTien" class="form-label">Tổng tiền</label>
+                 <input type="number" class="form-control" id="tongTien" name="tong_tien" step="0.01" required>
+             </div>
+              <div class="mb-3">
+                <label for="maKhachHang" class="form-label">Mã khách hàng</label>
+                <input type="text" class="form-control" id="maKhachHang" name="ma_khach_hang" required>
+               </div>
+
+           </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+             <button type="button" class="btn btn-primary" onclick="document.getElementById('createHoaDonForm').submit()">Lưu</button>
+           </div>
+           </form>
+        </div>
+      </div>
+    </div>
+
+        <!-- Modal in hóa đơn bán hàng -->
+        <div class="modal fade" id="printHoaDonModal" tabindex="-1" aria-labelledby="printHoaDonModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                  <h5 class="modal-title" id="printHoaDonModalLabel">In hóa đơn bán hàng</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <form method="post" id="printHoaDonForm">
+                          {% csrf_token %}
+                              <div class="mb-3">
+                                  <label for="maHoaDonIn" class="form-label">Mã hóa đơn</label>
+                                  <input type="text" class="form-control" id="maHoaDonIn" name="ma_hoa_don_in" required>
+                               </div>
+                          </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                      <button type="button" class="btn btn-primary" onclick="document.getElementById('printHoaDonForm').submit()">In</button>
+                 </div>
+              </div>
+         </div>
+      </div>
+
+
+  <!-- Modal nhập trực tiếp mã hàng -->
+  <div class="modal fade" id="nhapMaHangModal" tabindex="-1" aria-labelledby="nhapMaHangModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+             <div class="modal-header">
+              <h5 class="modal-title" id="nhapMaHangModalLabel">Nhập trực tiếp mã hàng</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+            <div class="modal-body">
+               <form id="nhapMaHangForm">
+                   <div class="mb-3">
+                       <label for="maSanPhamNhap" class="form-label">Mã sản phẩm</label>
+                       <input type="text" class="form-control" id="maSanPhamNhap" name="ma_san_pham_nhap" required>
+                   </div>
+               </form>
+             </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                  <button type="button" class="btn btn-primary" onclick="document.getElementById('nhapMaHangForm').submit()">Lưu</button>
+              </div>
+         </div>
+    </div>
+  </div>
+
+  <!-- Modal quét barcode-->
+  <div class="modal fade" id="quetBarcodeModal" tabindex="-1" aria-labelledby="quetBarcodeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="quetBarcodeModalLabel">Quét barcode</h5>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+           <div class="modal-body">
+                <div class="mb-3">
+                  <label for="barcodeInput" class="form-label">Barcode</label>
+                  <input type="text" class="form-control" id="barcodeInput" name="barcode" placeholder="Quét hoặc nhập barcode" required>
+                </div>
+             </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+              <button type="button" class="btn btn-primary" onclick="alert('Quét thành công')">Quét</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+  <!-- Modal Tính giá theo công thức -->
+  <div class="modal fade" id="tinhGiaModal" tabindex="-1" aria-labelledby="tinhGiaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+       <div class="modal-content">
+           <div class="modal-header">
+               <h5 class="modal-title" id="tinhGiaModalLabel">Tính giá theo công thức</h5>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+            <div class="modal-body">
+                 <p>Chọn công thức tính giá:</p>
+                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tinhGiaBanModal" data-bs-dismiss="modal">Tính Giá bán</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tinhGiaVonModal" data-bs-dismiss="modal">Tính Giá vốn</button>
+
+                </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+               </div>
+       </div>
+    </div>
+    </div>
+
+  
+<!-- Modal in phiếu bảo hành -->
+    <div class="modal fade" id="inPhieuBaoHanhModal" tabindex="-1" aria-labelledby="inPhieuBaoHanhModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+         <div class="modal-header">
+              <h5 class="modal-title" id="inPhieuBaoHanhModalLabel">In phiếu bảo hành</h5>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body">
+            <form method="post" id="inPhieuBaoHanhForm">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="maSanPhamBaoHanh" class="form-label">Mã sản phẩm</label>
+                    <input type="text" class="form-control" id="maSanPhamBaoHanh" name="ma_san_pham_bao_hanh" required>
+                </div>
+                <div class="mb-3">
+                    <label for="maKhachHangBaoHanh" class="form-label">Mã khách hàng</label>
+                    <input type="text" class="form-control" id="maKhachHangBaoHanh" name="ma_khach_hang_bao_hanh" required>
+                </div>
+             </form>
+            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+            <button type="button" class="btn btn-primary" onclick="document.getElementById('inPhieuBaoHanhForm').submit()">In</button>
+          </div>
+       </div>
+     </div>
+   </div>
+   
+     <!-- Modal Tính giá bán theo công thức -->
+     <div class="modal fade" id="tinhGiaBanModal" tabindex="-1" aria-labelledby="tinhGiaBanModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+           <div class="modal-header">
+                 <h5 class="modal-title" id="tinhGiaBanModalLabel">Giá bán = Giá vốn * Tỉ lệ áp giá</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+             <div class="modal-body">
+                <form id="tinhGiaBanForm">
+                    <div class="mb-3">
+                        <label for="giaVon" class="form-label">Giá vốn sản phẩm</label>
+                        <input type="number" class="form-control" id="giaVon" name="gia_von" required>
+                     </div>
+                     <div class="mb-3">
+                        <label for="tiLeApGia" class="form-label">Tỉ lệ áp giá</label>
+                        <input type="number" class="form-control" id="tiLeApGia" name="ti_le_ap_gia" step="0.01" required>
+                    </div>
+                    <div class="mb-3">
+                      <label for="ketQuaGiaBan" class="form-label">Kết quả</label>
+                        <input type="number" class="form-control" id="ketQuaGiaBan" name="ket_qua_gia_ban" readonly>
+                    </div>
+                </form>
+              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-primary"  onclick="tinhGiaBan()">Tính</button>
+             </div>
+        </div>
+      </div>
+     </div>
+
+
+    <!-- Modal Tính giá vốn theo công thức -->
+    <div class="modal fade" id="tinhGiaVonModal" tabindex="-1" aria-labelledby="tinhGiaVonModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="tinhGiaVonModalLabel">Giá vốn = Giá vàng * Trọng lượng + Tiền công + Tiền gia công</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+             <div class="modal-body">
+                 <form id="tinhGiaVonForm">
+                     <div class="mb-3">
+                       <label for="giaVang" class="form-label">Giá vàng thời điểm</label>
+                        <input type="number" class="form-control" id="giaVang" name="gia_vang" required>
+                    </div>
+                    <div class="mb-3">
+                         <label for="trongLuongSanPham" class="form-label">Trọng lượng sản phẩm</label>
+                        <input type="number" class="form-control" id="trongLuongSanPham" name="trong_luong_san_pham" step="0.01" required>
+                    </div>
+                   <div class="mb-3">
+                        <label for="tienCong" class="form-label">Tiền công</label>
+                        <input type="number" class="form-control" id="tienCong" name="tien_cong" required>
+                    </div>
+                    <div class="mb-3">
+                         <label for="tienDa" class="form-label">Tiền đá</label>
+                         <input type="number" class="form-control" id="tienDa" name="tien_da" required>
+                    </div>
+                  <div class="mb-3">
+                    <label for="ketQuaGiaVon" class="form-label">Kết quả</label>
+                        <input type="number" class="form-control" id="ketQuaGiaVon" name="ket_qua_gia_von" readonly>
+                 </div>
+                 </form>
+              </div>
+             <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                 <button type="button" class="btn btn-primary" onclick="tinhGiaVon()">Tính</button>
+              </div>
+        </div>
+      </div>
+    </div>
+  <!-- Modal quản lý nhân viên -->
+  <div class="modal fade" id="quanLyNhanVienModal" tabindex="-1" aria-labelledby="quanLyNhanVienModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+             <h5 class="modal-title" id="quanLyNhanVienModalLabel">Quản lý thông tin nhân viên</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                 <p>Nội dung quản lý thông tin nhân viên</p>
+           </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+               <button type="button" class="btn btn-primary">Đến trang</button>
+           </div>
+        </div>
+    </div>
+  </div>
+  <!-- Modal quản lý quầy -->
+    <div class="modal fade" id="quanLyQuayModal" tabindex="-1" aria-labelledby="quanLyQuayModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content">
+             <div class="modal-header">
+                <h5 class="modal-title" id="quanLyQuayModalLabel">Quản lý thông tin quầy</h5>
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+              <div class="modal-body">
+               <p>Nội dung quản lý thông tin quầy</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+               <button type="button" class="btn btn-primary">Đến trang</button>
+           </div>
+       </div>
+     </div>
+    </div>
+
+    <script>
+        document.getElementById('changeStaffForm').addEventListener('submit', function(event) {
+             event.preventDefault(); // Ngăn chặn form submit thông thường
+             this.submit(); // Submit form
+             window.location.reload()
+         });
+    </script>
+{% endblock %}
+
+{% block footer %}
+    {%include 'includes/footer.html'%}
+{% endblock %}

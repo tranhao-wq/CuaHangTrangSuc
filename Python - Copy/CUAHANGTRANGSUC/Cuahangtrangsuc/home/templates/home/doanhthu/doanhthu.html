@@ -1,0 +1,114 @@
+{% extends "master-page.html" %}
+{% load static %}
+
+{% block nav-bar %}
+    {%include 'includes/nav-bar.html'%}
+{% endblock %} 
+
+{% block left-menu %}
+    {% include 'includes/left-menu.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4" style="color: #007bff;">
+         <span class="text-muted fw-light">Quản lý /</span> Doanh Thu
+    </h4>
+
+    <div class="row">
+          <!-- Revenue Chart -->
+        <div class="col-md-8 mb-4">
+           <div class="card h-100" style="border: 1px solid #007bff;">
+                <div class="card-body">
+                    <h5 class="card-title text-primary text-center">Biểu đồ doanh thu</h5>
+                     <div class="text-center">
+                        <img src="{% static 'home/assets/img/illustrations/chart.png' %}" alt="Chart illustration" height="300" class="mt-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Revenue Statistics -->
+        <div class="col-md-4 mb-4">
+             <div class="card h-100" style="border: 1px solid #007bff;">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Thống kê doanh thu</h5>
+                     <p class="card-text">Tổng doanh thu tháng này: <span class="fw-bold">{{ tong_doanh_thu_thang_nay }}</span></p>
+                     <p class="card-text">Tổng doanh thu năm nay:  <span class="fw-bold">{{ tong_doanh_thu_nam_nay }}</span></p>
+                </div>
+            </div>
+         </div>
+    </div>
+    
+     <!-- Revenue By Counter Section -->
+      <div class="card mb-4" style="border: 1px solid #007bff;">
+          <div class="card-body">
+             <h5 class="card-title text-primary text-center">Doanh thu theo quầy</h5>
+             <div class="table-responsive text-nowrap">
+                <table class="table">
+                     <thead>
+                        <tr>
+                            <th class="text-center">Tên quầy</th>
+                             <th class="text-center">Doanh thu tháng này</th>
+                           <th class="text-center">Doanh thu năm nay</th>
+                         </tr>
+                     </thead>
+                     <tbody class="table-border-bottom-0">
+                         {% for quay in doanh_thu_theo_quay %}
+                         <tr>
+                           <td class="text-center">{{ quay.ten_quay }}</td>
+                            <td class="text-center">{{ quay.doanh_thu_thang_nay }}</td>
+                            <td class="text-center">{{ quay.doanh_thu_nam_nay }}</td>
+                        </tr>
+                         {% empty %}
+                            <tr>
+                                <td colspan="3" class="text-center">Không có dữ liệu doanh thu theo quầy.</td>
+                            </tr>
+                       {% endfor %}
+                    </tbody>
+                </table>
+             </div>
+         </div>
+    </div>
+
+    <!-- Revenue By Employee Section -->
+    <div class="card" style="border: 1px solid #007bff;">
+         <div class="card-body">
+              <h5 class="card-title text-primary text-center">Doanh thu theo nhân viên</h5>
+            <div class="table-responsive text-nowrap">
+                 <table class="table">
+                      <thead>
+                        <tr>
+                            <th class="text-center">Tên nhân viên</th>
+                            <th class="text-center">Doanh thu tháng này</th>
+                             <th class="text-center">Doanh thu năm nay</th>
+                         </tr>
+                      </thead>
+                      <tbody class="table-border-bottom-0">
+                        {% for nhanvien in doanh_thu_theo_nhan_vien %}
+                            <tr>
+                                <td class="text-center">{{ nhanvien.ho_ten }}</td>
+                                <td class="text-center">{{ nhanvien.doanh_thu_thang_nay }}</td>
+                                  <td class="text-center">{{ nhanvien.doanh_thu_nam_nay }}</td>
+                           </tr>
+                           {% empty %}
+                           <tr>
+                                 <td colspan="3" class="text-center">Không có dữ liệu doanh thu theo nhân viên.</td>
+                            </tr>
+                         {% endfor %}
+                      </tbody>
+                </table>
+             </div>
+         </div>
+    </div>
+    <div class="d-flex justify-content-end mt-3 me-3">
+       <a href="#" class="btn btn-primary">
+           <i class="bx bx-calendar me-1"></i> Xem báo cáo
+       </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+    {%include 'includes/footer.html'%}
+{% endblock %}

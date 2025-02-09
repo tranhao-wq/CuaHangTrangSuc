@@ -1,0 +1,54 @@
+{% extends "master-page.html" %}  <!-- Kế thừa từ master page -->
+
+{% load humanize %}  <!-- Load thư viện humanize để sử dụng filter intcomma -->
+
+{% block nav-bar %}
+    {% include 'includes/nav-bar.html' %}  <!-- Bao gồm phần điều hướng -->
+{% endblock %}
+
+{% block left-menu %}
+    {% include 'includes/left-menu.html' %}  <!-- Bao gồm menu bên trái -->
+{% endblock %}
+
+{% block content %}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4" style="color: #6c757d;">
+        <span class="text-muted fw-light">Quản lý /</span> Danh sách sản phẩm
+    </h4>
+
+    <!-- Table to Display Products -->
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title text-secondary text-center">Danh sách sản phẩm</h5>
+            <div class="table-responsive text-nowrap">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Mã sản phẩm</th>
+                            <th class="text-center">Tên sản phẩm</th>
+                            <th class="text-center">Giá bán</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for sanpham in san_phams %}
+                            <tr>
+                                <td class="text-center">{{ sanpham.ma_san_pham }}</td>
+                                <td class="text-center">{{ sanpham.ten_san_pham }}</td>
+                                <td class="text-center">{{ sanpham.gia_ban|intcomma }} ₫</td>                            
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="3" class="text-center">Chưa có sản phẩm nào.</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+    {% include 'includes/footer.html' %}  <!-- Bao gồm footer -->
+{% endblock %}

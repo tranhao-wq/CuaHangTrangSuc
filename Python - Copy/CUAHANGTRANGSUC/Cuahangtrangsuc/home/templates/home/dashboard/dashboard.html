@@ -1,0 +1,128 @@
+{% extends "master-page.html" %}
+{% load static %}
+
+{% block nav-bar %}
+    {% include 'includes/nav-bar.html' %}
+{% endblock %}
+
+{% block left-menu %}
+    {% include 'includes/left-menu.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4" style="color: #0d6efd;">
+        <span class="text-muted fw-light">Quản lý /</span> Dashboard
+    </h4>
+
+    <div class="row">
+        <!-- Sales Overview -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100" style="border: 1px solid #0d6efd;">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Tổng quan doanh số</h5>
+                   <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                           <p class="card-text">Doanh số hôm nay: <span class="fw-bold">15,000,000</span></p>
+                             <p class="card-text">Doanh số tháng này: <span class="fw-bold">50,000,000</span></p>
+                            <p class="card-text">Doanh số năm nay: <span class="fw-bold">1,000,000,000</span></p>
+                        </div>
+                          <i class='bx bx-dollar-circle bx-lg text-primary'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Statistics -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100" style="border: 1px solid #0d6efd;">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Thống kê sản phẩm</h5>
+                      <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                            <p class="card-text">Tổng số sản phẩm: <span class="fw-bold">200</span></p>
+                             <p class="card-text">Sản phẩm bán chạy: <span class="fw-bold">Vòng tay vàng</span></p>
+                                <p class="card-text">Sản phẩm sắp hết hàng: <span class="fw-bold">Nhẫn bạc</span></p>
+                            </div>
+                             <i class='bx bx-box bx-lg text-primary'></i>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+        <!-- Employee Statistics -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100" style="border: 1px solid #0d6efd;">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">Thống kê nhân viên</h5>
+                   <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                             <p class="card-text">Tổng số nhân viên: <span class="fw-bold">10</span></p>
+                                <p class="card-text">Nhân viên mới: <span class="fw-bold">2</span></p>
+                                <p class="card-text">Nhân viên làm tốt: <span class="fw-bold">3</span></p>
+                            </div>
+                            <i class='bx bx-user-circle bx-lg text-primary'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="row mt-4">
+        <div class="col-md-8 mb-4">
+            <div class="card h-100" style="border: 1px solid #0d6efd;">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-primary">Biểu đồ doanh thu</h5>
+                    <img src="{% static 'home/assets/img/illustrations/chart.png' %}" alt="Revenue Chart" class="img-fluid mt-3">
+                </div>
+            </div>
+        </div>
+         <div class="col-md-4 mb-4">
+            <div class="card h-100" style="border: 1px solid #0d6efd;">
+                <div class="card-body text-center">
+                    <h5 class="card-title text-primary">Biểu đồ sản phẩm</h5>
+                      <img src="{% static 'home/assets/img/illustrations/chart2.png' %}" alt="Revenue Chart" class="img-fluid mt-3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <div class="row mt-4">
+        <div class="col-md-12">
+           <div class="card h-100" style="border: 1px solid #0d6efd;">
+                <div class="card-body">
+                     <h5 class="card-title text-primary text-center">Hoạt động gần đây</h5>
+                    <div class="table-responsive text-nowrap">
+                       <table class="table">
+                             <thead>
+                                 <tr>
+                                    <th class="text-center">Thời gian</th>
+                                     <th class="text-center">Hoạt động</th>
+                                     <th class="text-center">Nhân viên</th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-border-bottom-0">
+                                <tr>
+                                   <td class="text-center">2024-07-29 10:00:00</td>
+                                    <td class="text-center">Bán sản phẩm</td>
+                                    <td class="text-center">Nguyễn Văn A</td>
+                                 </tr>
+                                  <tr>
+                                   <td class="text-center">2024-07-29 11:00:00</td>
+                                    <td class="text-center">Nhập hàng</td>
+                                     <td class="text-center">Nguyễn Văn B</td>
+                                 </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+    {% include 'includes/footer.html' %}
+{% endblock %}

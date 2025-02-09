@@ -1,0 +1,49 @@
+├── Quản lý quầy bán
+│   ├── Lập hóa đơn tại quầy
+│   │   ├── Tạo hóa đơn bán hàng
+│   │   ├── In hóa đơn bán hàng
+│   │   └── Nhập trực tiếp mã hàng
+│   │       └── Quét barcode
+│   ├── Quản lý bảo hành
+│   │   └── In phiếu bảo hành
+│   ├── Tính giá bán
+│   │   └── Tính giá theo công thức
+│   │       ├── Giá bán = Giá vốn * Tỉ lệ áp giá
+│   │       └── Giá vốn = Giá vàng * Trọng lượng + Tiền công + Tiền gia công
+│   └── Quản lý nhân viên và quầy
+│       ├── Quản lý thông tin nhân viên
+│       └── Quản lý thông tin quầy
+│
+├── Quản lý khách hàng
+│   ├── Quản lý thông tin khách hàng
+│   │   ├── Tìm kiếm thông tin khách hàng
+│   │   └── Xem lịch sử mua hàng
+│   ├── Quản lý mua lại
+│   │   ├── Tạo hóa đơn mua lại
+│   │   └── Tìm lại hóa đơn bán hàng
+│   │       └── Hỗ trợ tìm lại hóa đơn
+│   ├── Quản lý ưu đãi
+│   │   └── Áp dụng chính sách ưu đãi
+│   └── Quản lý tích lũy điểm
+│
+├── Quản lý khuyến mãi
+│   ├── Quản lý chương trình khuyến mãi
+│   │   └── Xác nhận chiết khấu
+│   └── Tính chiết khấu tự động
+│
+├── Quản lý sản phẩm
+│   ├── Quản lý sản phẩm
+│   │   ├── Khai báo sản phẩm mới
+│   │   └── Quản lý sản phẩm trong quầy
+│   ├── Quản lý giá vàng
+│   │   └── Cập nhật giá vàng theo thời điểm
+│   └── Quản lý tồn kho
+│
+└── Báo cáo
+    ├── Báo cáo bán hàng
+    │   └── Báo cáo theo kỳ
+    ├── Báo cáo doanh thu
+    │   └── Báo cáo theo quầy
+    ├── Báo cáo giao dịch
+    │   └── Báo cáo chi tiết giao dịch
+    └── Dashboard thống kê

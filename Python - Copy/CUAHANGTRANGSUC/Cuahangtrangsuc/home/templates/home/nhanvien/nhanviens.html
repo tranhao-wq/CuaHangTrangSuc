@@ -1,0 +1,137 @@
+{% extends "master-page.html" %}
+{% load static %}
+
+{% block nav-bar %}
+    {%include 'includes/nav-bar.html'%}
+{% endblock %} 
+
+{% block left-menu %}
+    {% include 'includes/left-menu.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4">
+        <span class="text-muted fw-light">Quản lý /</span> Nhân Viên
+    </h4>
+
+    <div class="row">
+        {% for nhanvien in nhanviens %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100">
+                 <div class="card-body">
+                     <div class="d-flex align-items-start align-items-sm-center gap-4">
+                        <div class="avatar me-4">
+                               <img src="{% static 'home/assets/img/avatars/1.png' %}" alt="user-avatar" class="d-block rounded" height="100" width="100" id="uploadedAvatar" />
+                         </div>
+                        <div class="d-flex flex-column">
+                            <h5 class="mb-2 text-capitalize">{{ nhanvien.ho_ten }}</h5>
+                            <p class="text-muted mb-1"><i class="bx bx-id-card bx-sm me-1"></i>Mã NV: {{ nhanvien.ma_nhan_vien }}</p>
+                           
+                            <div class="d-flex align-items-center">
+                            <i class="bx bxs-store bx-sm text-primary me-1"></i>
+                            <span class="text-muted ">
+                                {% if nhanvien.quaybanhang_set.first %}
+                                    {{ nhanvien.quaybanhang_set.first.ten_quay }}
+                                {% else %}
+                                    <span class="badge bg-label-warning">Chưa phân công</span>
+                                {% endif %}
+                            </span>
+                            </div>
+                        </div>
+                     </div>
+                   
+                </div>
+                  <div class="card-footer bg-transparent border-top d-flex justify-content-end">
+                         <div class="dropdown">
+                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu">
+                                     <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#editEmployeeModal{{ nhanvien.ma_nhan_vien }}">
+                                        <i class="bx bx-edit me-1"></i> Chỉnh sửa
+                                     </button>
+
+                                      <form method="post" action="{% url 'nhanvien-delete' nhanvien.ma_nhan_vien %}">
+                                           {% csrf_token %}
+                                        <button type="submit" class="dropdown-item"><i class="bx bx-trash me-1"></i> Xóa</button>
+                                     </form>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+        </div>
+         <div class="modal fade" id="editEmployeeModal{{ nhanvien.ma_nhan_vien }}" tabindex="-1" aria-labelledby="editEmployeeModalLabel{{ nhanvien.ma_nhan_vien }}" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editEmployeeModalLabel{{ nhanvien.ma_nhan_vien }}">Chỉnh sửa nhân viên</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                 </div>
+               <div class="modal-body">
+                  <form method="post" id="editEmployeeForm{{ nhanvien.ma_nhan_vien }}">
+                        {% csrf_token %}
+                       <div class="mb-3">
+                            <label for="maNhanVienEdit{{ nhanvien.ma_nhan_vien }}" class="form-label">Mã nhân viên</label>
+                            <input type="text" class="form-control" id="maNhanVienEdit{{ nhanvien.ma_nhan_vien }}" name="ma_nhan_vien" value="{{ nhanvien.ma_nhan_vien }}" required>
+                        </div>
+                         <div class="mb-3">
+                            <label for="hoTenEdit{{ nhanvien.ma_nhan_vien }}" class="form-label">Họ và tên</label>
+                            <input type="text" class="form-control" id="hoTenEdit{{ nhanvien.ma_nhan_vien }}" name="ho_ten" value="{{ nhanvien.ho_ten }}" required>
+                         </div>
+                         <input type="hidden" name="edit_employee" value="true">
+                     </form>
+                </div>
+                <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" form="editEmployeeForm{{ nhanvien.ma_nhan_vien }}" class="btn btn-primary">Lưu thay đổi</button>
+                </div>
+           </div>
+        </div>
+     </div>
+        {% empty %}
+            <div class="col-12 text-center">
+                <p>Không có nhân viên nào.</p>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="d-flex justify-content-end mt-3 me-3">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEmployeeModal">
+            <i class="bx bx-plus-circle me-1"></i> Thêm nhân viên
+        </button>
+    </div>
+</div>
+
+<div class="modal fade" id="addEmployeeModal" tabindex="-1" aria-labelledby="addEmployeeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addEmployeeModalLabel">Thêm nhân viên mới</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" id="addEmployeeForm">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="maNhanVien" class="form-label">Mã nhân viên</label>
+                        <input type="text" class="form-control" id="maNhanVien" name="ma_nhan_vien" required>
+                    </div>
+                     <div class="mb-3">
+                        <label for="hoTen" class="form-label">Họ và tên</label>
+                        <input type="text" class="form-control" id="hoTen" name="ho_ten" required>
+                     </div>
+                     <input type="hidden" name="add_employee" value="true">
+                </form>
+            </div>
+            <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="submit" form="addEmployeeForm" class="btn btn-primary">Lưu</button>
+             </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+    {%include 'includes/footer.html'%}
+{% endblock %}

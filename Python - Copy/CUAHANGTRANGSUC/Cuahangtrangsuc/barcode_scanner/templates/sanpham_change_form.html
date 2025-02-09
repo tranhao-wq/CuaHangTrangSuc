@@ -1,0 +1,57 @@
+{% extends 'admin/change_form.html' %}
+{% block content %}
+    {{ block.super }}
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <button type="button" class="btn btn-primary" onclick="startScanning()">Bắt đầu quét</button>
+            <div id="qr-reader" style="width: 400px;"></div>
+            <div id="result" class="mt-3"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js"></script>
+    <script>
+        let html5QrCode;
+
+        function startScanning() {
+            html5QrCode = new Html5Qrcode("qr-reader", {
+                formatsToSupport: [Html5QrcodeSupportedFormats.QR_CODE, Html5QrcodeSupportedFormats.CODE_128],
+                verbose: true,
+            });
+
+            const qrCodeSuccessCallback = (decodedText, decodedResult) => {
+                console.log("Barcode:", decodedText);
+                
+                // Gửi mã barcode tới server để xử lý
+                fetch('/xu-ly-barcode/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{ csrf_token }}', 
+                    },
+                    body: JSON.stringify({ barcode: decodedText }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("result").innerHTML = `Kết quả: ${data.message}`;
+                })
+                .catch(err => console.error("Error:", err));
+
+                stopScanning(); // Dừng quét sau khi quét xong
+            };
+
+            const config = { fps: 10, qrbox: { width: 250, height: 250 } };
+            html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
+        }
+
+        function stopScanning() {
+            if (html5QrCode) {
+                html5QrCode.stop().then(() => {
+                    console.log("Camera stopped.");
+                }).catch(err => {
+                    console.error("Failed to stop camera", err);
+                });
+            }
+        }
+    </script>
+{% endblock %}
