@@ -20,3 +20,16 @@ Cửa hàng trang sức online chuyên cung cấp các sản phẩm trang sức 
 - **Cơ sở dữ liệu**: PostgreSQL / SQLite
 - **Môi trường phát triển**: VS Code, Django virtual environment (`django venv`)
 
+## Phân Loại:
+- Chất lượng cao
+- Mẫu mã độc đáo
+- Nhập khẩu quốc tế
+
+## Cài đặt:
+1. Clone the repository.
+2. Mở thư mục dự án
+3. Kích hoạt môi trường ảo
+4. Chạy python manage.py runserver
+
+## Liên hệ:
+email: info@jewelrystore.com
