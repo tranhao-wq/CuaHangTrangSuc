@@ -1,3 +1,5 @@
+# TRÂN TRỌNG VÀ CẢM ƠN THẦY NGUYỄN VĂN CHIẾN ĐÃ HỖ TRỢ CHÚNG EM TRONG SUỐT QUÁ TRÌNH HỌC TẬP VỪA QUA
+
 # Cửa Hàng Trang Sức Online
 
 ## Giới Thiệu
@@ -33,3 +35,12 @@ Cửa hàng trang sức online chuyên cung cấp các sản phẩm trang sức 
 
 ## Liên hệ:
 email: info@jewelrystore.com
+# Preview 
+![image](https://github.com/user-attachments/assets/337b8565-6292-48e3-9187-1bc29751d960)
+![image](https://github.com/user-attachments/assets/788c5015-eac3-4287-a65a-8b0dce480674)
+![image](https://github.com/user-attachments/assets/898b1940-1492-434b-a123-c7329943de07)
+![image](https://github.com/user-attachments/assets/366c767b-9c75-484c-8347-252120c102b7)
+
+
+
+
