@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/b9bad203-d774-438a-b44c-22e20ce72875)# 💎 Cửa Hàng Trang Sức Online
+# 💎 Cửa Hàng Trang Sức Online
 ## 📝 Giới Thiệu
 Cửa hàng trang sức online chuyên cung cấp các sản phẩm trang sức cao cấp, đa dạng về mẫu mã, chất liệu và phong cách.
 Khách hàng có thể dễ dàng lựa chọn và mua sắm trực tuyến với trải nghiệm tốt nhất.
@@ -52,6 +52,7 @@ Môi trường phát triển: VS Code, Django virtual environment (django venv)
 
 # Preview 
 ### Trang chủ
+![image](https://github.com/user-attachments/assets/b9bad203-d774-438a-b44c-22e20ce72875)
 ![image](https://github.com/user-attachments/assets/813a9833-6ae8-4f06-967d-9e6994742422)
 ![image](https://github.com/user-attachments/assets/337b8565-6292-48e3-9187-1bc29751d960)
 ### Quản lý quầy
