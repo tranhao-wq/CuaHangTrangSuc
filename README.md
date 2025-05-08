@@ -1,4 +1,4 @@
-# 💎 Cửa Hàng Trang Sức Online
+![image](https://github.com/user-attachments/assets/b9bad203-d774-438a-b44c-22e20ce72875)# 💎 Cửa Hàng Trang Sức Online
 ## 📝 Giới Thiệu
 Cửa hàng trang sức online chuyên cung cấp các sản phẩm trang sức cao cấp, đa dạng về mẫu mã, chất liệu và phong cách.
 Khách hàng có thể dễ dàng lựa chọn và mua sắm trực tuyến với trải nghiệm tốt nhất.
@@ -51,7 +51,10 @@ Môi trường phát triển: VS Code, Django virtual environment (django venv)
  📧 Email: info@jewelrystore.com
 
 # Preview 
+### Trang chủ
+![image](https://github.com/user-attachments/assets/813a9833-6ae8-4f06-967d-9e6994742422)
 ![image](https://github.com/user-attachments/assets/337b8565-6292-48e3-9187-1bc29751d960)
+
 ![image](https://github.com/user-attachments/assets/788c5015-eac3-4287-a65a-8b0dce480674)
 ![image](https://github.com/user-attachments/assets/898b1940-1492-434b-a123-c7329943de07)
 ![image](https://github.com/user-attachments/assets/366c767b-9c75-484c-8347-252120c102b7)
