@@ -80,7 +80,7 @@ Môi trường phát triển: VS Code, Django virtual environment (django venv)
 ![image](https://github.com/user-attachments/assets/366c767b-9c75-484c-8347-252120c102b7)
 ### Dashboard
 ![image](https://github.com/user-attachments/assets/55983355-59fe-4ec7-b87c-6599a3a4310f)
-👨‍💻 Author
+#👨‍💻 Author
 Trần Thế Hảo
 
 🎓 Information Technology, University of Transport Ho Chi Minh City (UTH)
