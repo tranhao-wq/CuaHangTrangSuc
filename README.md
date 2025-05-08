@@ -80,6 +80,10 @@ Môi trường phát triển: VS Code, Django virtual environment (django venv)
 ![image](https://github.com/user-attachments/assets/366c767b-9c75-484c-8347-252120c102b7)
 ### Dashboard
 ![image](https://github.com/user-attachments/assets/55983355-59fe-4ec7-b87c-6599a3a4310f)
+
+## 📌Xem video demo
+## [![Xem video demo](https://img.youtube.com/vi/fx1cHZKM9CI/0.jpg)](https://youtu.be/fx1cHZKM9CI)
+
 #👨‍💻 Author
 Trần Thế Hảo
 
