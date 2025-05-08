@@ -64,7 +64,7 @@ Môi trường phát triển: VS Code, Django virtual environment (django venv)
 ![image](https://github.com/user-attachments/assets/8caf8154-d5f1-4027-aff9-f7936127e4ac)
 ![image](https://github.com/user-attachments/assets/8350432b-8e2d-4d3f-ab4e-d17aec30ecbd)
 ### Quản lý mua lại 
-![image](https://github.com/user-attachments/assets/908141f7-0afd-450b-bcc5-17444b2162c4)
+![image](https://github.com/user-attachments/assets/29242fca-5d8e-4b2f-8bb0-1fffd451dec1)
 ### Báo cáo doanh thu
 ![image](https://github.com/user-attachments/assets/9cd722c4-bdf1-44e2-9f53-440c4a91d730)
 ### Khai báo
