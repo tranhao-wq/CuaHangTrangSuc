@@ -1,3 +1,17 @@
+# Lập trình Công nghệ Phần mềm – Dự án môn học
+## 📌 Lời cảm ơn
+Chúng em xin chân thành cảm ơn Thầy Nguyễn Văn Chiến – Tiến Sĩ, người đã tận tình hướng dẫn, giảng dạy và hỗ trợ chúng em trong suốt quá trình học tập và thực hiện dự án môn Lập trình Công nghệ Phần mềm.
+
+Sự tận tụy, chuyên môn sâu sắc và tinh thần khuyến khích sáng tạo của thầy là nguồn động lực lớn, giúp chúng em không chỉ tiếp thu kiến thức nền tảng vững chắc mà còn học được cách tư duy hệ thống, lập trình có định hướng và làm việc chuyên nghiệp trong môi trường phần mềm thực tế.
+
+Một lần nữa, chúng em xin gửi lời cảm ơn chân thành và kính chúc thầy nhiều sức khỏe, luôn giữ vững niềm đam mê và tiếp tục truyền cảm hứng cho nhiều thế hệ sinh viên tiếp theo.
+
+Trân trọng,
+Nhóm sinh viên thực hiện: GROUP 8
+<img width="800" height="800" alt="image" src="https://github.com/user-attachments/assets/c2036367-f9cf-442f-bf36-e314ed846a2d" />
+
+----
+
 # 💎 Cửa Hàng Trang Sức Online
 ## 📝 Giới Thiệu
 Cửa hàng trang sức online chuyên cung cấp các sản phẩm trang sức cao cấp, đa dạng về mẫu mã, chất liệu và phong cách.
